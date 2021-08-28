@@ -1,0 +1,59 @@
+---
+title: How To Speed Test Your VPS
+description: 'Is your VPS provider giving you adequate upload and download speeds? Use the speedtest-cli package to run a speed test from the terminal'
+headerImage: ./posts/img/vps-speed.png
+tags:
+  - linux
+---
+
+When looking for a VPS (virtual private server) provider, many list the specs and features publicly but often neglect to share the network speed. That’s probably fair since it’s really difficult to give an accurate “speed” when servers are often located all over the world and so are your users.
+
+It might be helpful to test out the network speed to some of the locations you’ll expect users to connect from. And, thanks to GitHub user @Sivel we can use their python-based CLI for the popular website speedtest.net – speedtest-cli.
+
+**If Python is installed…**
+
+You can install the speedtest-cli via pip
+
+```shell
+pip install speedtest-cli
+```
+
+**Otherwise...**
+
+```shell
+wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
+chmod +x speedtest-cli
+```
+
+Of course, all of the instructions are provided in the [documentation on GitHub](https://github.com/sivel/speedtest-cli#usage) where you can find the additional usage flags.
+
+To run a basic speed test you can simply run:
+
+```shell
+./speedtest-cli
+```
+
+You can watch an example of installing and running these commands below. This is running on a VPS provided by Vultr.
+
+<center>
+<script id="asciicast-MoRw0B2uhdjXuBrTm7klfqgjL" src="https://asciinema.org/a/MoRw0B2uhdjXuBrTm7klfqgjL.js" async></script>
+</center>
+
+After the _speedtest-cli_ has completed you'll receive output similar to the following, containing the server you have connected to and your download and most-importantly, upload speed.
+
+```shell
+Testing from Choopa, LLC (45.76.xxx.xxx)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by Speedtest.net (Atlanta, GA) [6.39 km]: 1.365 ms
+Testing upload
+speed...................Download: 551.92 Mbits
+Testing upload speed....Upload: 251.37 Mbits
+root@vultr:~/speedtest# exit
+```
+
+One trick that may make this tool more useful for your real-world testing may be to provide the **--server** argument where you can supply a known SpeedTest.net server ID to test against. this may be useful if you know a large portion of your users will be connecting from known locations or if you want to deliberately test against multiple nodes.
+
+And finally, if you are truly passionate about testing you may also export to a CSV file using **--csv** so you can capture your findings.
+
+Try this out on a trial of any VPS provider you are considering in the future. Check out Vultr if you are looking for a recommendation. I have been using them for years and as you can see above, the speed isn't half bad! [Use our link to get 100 toward your VPS on Vultr. Click here!](https://www.vultr.com/?ref=7322284)
