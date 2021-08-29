@@ -147,10 +147,10 @@
       <transition name="menuSlide">
         <ul
           v-show="isToggled || lg || xl"
-          class="lg:flex flex-col lg:flex-row bg-white shadow-sm lg:shadow-none">
+          class="lg:flex flex-col lg:flex-row bg-white shadow-sm lg:shadow-none items-center">
           <li class="navItem" v-for="page in pages" :key="page.title">
             <NuxtLink :to="page.url" active-class="activeNavItem">
-              <span class="py-2 px-4">
+              <span class="px-4">
                 {{ page.title }}
               </span>
             </NuxtLink>
