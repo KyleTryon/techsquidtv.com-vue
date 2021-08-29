@@ -1,11 +1,11 @@
 <template>
   <main class="mainContainer">
     <article>
-        <nuxt-picture
-          :src="article.headerImage"
-          class="w-full h-auto rounded-sm"
-          alt=""
-        />
+      <nuxt-picture
+        :src="article.headerImage"
+        class="w-full h-auto rounded-sm"
+        alt=""
+      />
       <div class="card px-2">
         <header class="px-4">
           <h1 class="font-bold text-5xl py-4">
@@ -23,27 +23,28 @@
         </div>
       </div>
       <div class="card px-2">
-        <script src="https://giscus.app/client.js"
-        data-repo="KyleTryon/techsquidtv.com"
-        data-repo-id="MDEwOlJlcG9zaXRvcnk0MDA2OTYzMzk="
-        data-category="Announcements"
-        data-category-id="DIC_kwDOF-IkE84B-3Qb"
-        data-mapping="title"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-theme="light"
-        crossorigin="anonymous"
-        async>
-</script>
+        <script
+          src="https://giscus.app/client.js"
+          data-repo="KyleTryon/techsquidtv.com"
+          data-repo-id="MDEwOlJlcG9zaXRvcnk0MDA2OTYzMzk="
+          data-category="Blog Comments"
+          data-category-id="DIC_kwDOF-IkE84B-3RT"
+          data-mapping="title"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-theme="light"
+          crossorigin="anonymous"
+          async
+        ></script>
       </div>
     </article>
   </main>
 </template>
 
 <style>
-  img {
-    @apply rounded-sm shadow-sm
-  }
+img {
+  @apply rounded-sm shadow-sm;
+}
 </style>
 
 <script>
