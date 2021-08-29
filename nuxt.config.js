@@ -59,7 +59,13 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@nuxt/image',
+    '@nuxtjs/composition-api/module',
   ],
+
+  generate: {
+    // choose to suit your project
+    interval: 2000,
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

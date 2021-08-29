@@ -1,7 +1,14 @@
 <template>
-  <nav class="fixed top-0 lg:static w-full font-sans dark:bg-gray-800">
-    <div class="mainContainer flex flex-col lg:flex-row lg:justify-between lg:bg-white">
-      <div class="navHeader flex flex-row justify-between py-2 bg-white z-50">
+  <nav class="fixed top-0 lg:static w-full font-sans dark:bg-gray-800 lg:bg-white">
+    <div
+      class="
+        mainContainer
+        flex flex-col
+        lg:flex-row
+        lg:justify-between
+      "
+    >
+      <div class="navHeader flex flex-row justify-between py-2 bg-white z-50 h-14">
         <NuxtLink to="/" class="flex font-black items-center">
           <svg
             version="1.1"
@@ -120,7 +127,7 @@
 
           <span>TechSquidTV</span>
         </NuxtLink>
-        <button class="p-2 lg:hidden" @click="isToggled = !isToggled">
+        <button class="px-2 lg:hidden" @click="isToggled = !isToggled">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6"
@@ -138,7 +145,9 @@
         </button>
       </div>
       <transition name="menuSlide">
-        <ul v-show="isToggled" class="lg:flex flex-col lg:flex-row bg-white shadow-sm lg:shadow-none">
+        <ul
+          v-show="isToggled || lg || xl"
+          class="lg:flex flex-col lg:flex-row bg-white shadow-sm lg:shadow-none">
           <li class="navItem" v-for="page in pages" :key="page.title">
             <NuxtLink :to="page.url" active-class="activeNavItem">
               <span class="py-2 px-4">
@@ -152,11 +161,16 @@
   </nav>
 </template>
 
-<script lang="ts">
+<script>
+import { useBreakpointTailwindCSS } from "vue-composable";
 export default {
+  setup() {
+    // it will return object with reactive properties {XL: boolean, L: boolean, S: boolean}
+    return useBreakpointTailwindCSS();
+  },
   data() {
     return {
-      isToggled: true,
+      isToggled: false,
       pages: [
         {
           title: 'blog',
@@ -193,13 +207,14 @@ export default {
   @apply rounded-sm bg-gray-800 text-white dark:bg-gray-100 dark:text-black inline-block;
 }
 
-.menuSlide-enter-active, .menuSlide-leave-active {
+.menuSlide-enter-active,
+.menuSlide-leave-active {
   transition: all 0.5s ease-in-out;
 }
 
-.menuSlide-enter, .menuSlide-leave-to {
+.menuSlide-enter,
+.menuSlide-leave-to {
   transform-origin: top center;
   transform: translateY(-100%);
 }
-
 </style>
