@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-0 lg:static w-full font-sans dark:bg-gray-800 lg:bg-white">
+  <nav class="fixed top-0 lg:static w-full font-sans dark:bg-gray-800 lg:bg-white z-50">
     <div
       class="
         mainContainer
@@ -149,7 +149,7 @@
           v-show="isToggled || lg || xl"
           class="lg:flex flex-col lg:flex-row bg-white shadow-sm lg:shadow-none items-center">
           <li class="navItem" v-for="page in pages" :key="page.title">
-            <NuxtLink :to="page.url" active-class="activeNavItem">
+            <NuxtLink :to="page.url" active-class="activeNavItem" class="hoverItem">
               <span class="px-4">
                 {{ page.title }}
               </span>
@@ -205,6 +205,10 @@ export default {
 
 .activeNavItem {
   @apply rounded-sm bg-gray-800 text-white dark:bg-gray-100 dark:text-black inline-block;
+}
+
+.hoverItem {
+  @apply transform transition-all duration-100 hover:bg-purple-400 rounded-sm hover:text-white py-1;
 }
 
 .menuSlide-enter-active,
