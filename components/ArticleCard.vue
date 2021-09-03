@@ -1,9 +1,8 @@
 <template>
   <div>
     <article
-      class="card "
-    >
-      <div class="">
+      class="card ">
+      <div class="cardHeader">
         <nuxt-picture :src="image" fit="cover" height="600px"/>
       </div>
       <summary class="p-4">
@@ -26,4 +25,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.cardHeader img {
+  width: 100%;
+}
+</style>

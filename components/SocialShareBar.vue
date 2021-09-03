@@ -2,7 +2,7 @@
   <div
     class="
       socialBar
-      lg:top-4
+      xl:top-4
       flex
       flex-1
       rounded-sm
@@ -11,10 +11,9 @@
       dark:bg-gray-800;
       p-2
       justify-center
-      lg:sticky
-      lg:top-0
-      lg:flex-col
-      lg:mx-2
+      xl:sticky
+      xl:flex-col
+      xl:mx-2
     "
   >
     <a class="socialItem twitter" :href="`https://twitter.com/intent/tweet?url=${encodeURI('https://techsquidtv.com' + $route.fullPath)}&text=Check%20out%20this%20post%20from%20@TechSquidTV%3A%20`">
@@ -35,6 +34,18 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
         <path
           d="M448 32v448H0V32h448zM236 287.5L313.5 142h-32.7L235 233c-4.7 9.3-9 18.3-12.8 26.8L210 233l-45.2-91h-35l76.7 143.8v94.5H236v-92.8z"
+        />
+      </svg>
+    </a>
+    <a class="socialItem facebook">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
         />
       </svg>
     </a>

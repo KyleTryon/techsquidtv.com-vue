@@ -8,7 +8,7 @@
         lg:justify-between
       "
     >
-      <div class="navHeader flex flex-row justify-between py-2 bg-white z-50 h-14">
+      <div class="navHeader flex flex-row justify-between py-2 bg-white dark:bg-gray-800 z-50 h-14">
         <NuxtLink to="/" class="flex font-black items-center">
           <svg
             version="1.1"
@@ -147,7 +147,7 @@
       <transition name="menuSlide">
         <ul
           v-show="isToggled || lg || xl"
-          class="lg:flex flex-col lg:flex-row bg-white shadow-sm lg:shadow-none items-center">
+          class="lg:flex flex-col lg:flex-row bg-white dark:bg-gray-800 shadow-sm lg:shadow-none items-center">
           <li class="navItem" v-for="page in pages" :key="page.title">
             <NuxtLink :to="page.url" active-class="activeNavItem" class="hoverItem">
               <span class="px-4">

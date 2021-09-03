@@ -1,32 +1,27 @@
 <template>
   <main class="mainContainer">
-    <article>
-      <div class="flex flex-col xl:flex-row-reverse">
-        <div class="flex-1">
-          <nuxt-picture
-            :src="article.headerImage"
-            class="w-full h-auto rounded-sm"
-            alt=""
-          />
-          <div class="card px-2">
-            <header class="px-4">
-              <h1 class="font-bold text-5xl py-4">
-                {{ article.title }}
-              </h1>
-              <div class="flex text-sm flex-col w-full">
-                <div class="text-xs flex flex-row justify-between">
-                  <read-time :readingTime="article.readingTime" class="py-1" />
-                  <published-at :date="article.createdAt" class="py-1" />
-                </div>
+    <article class="">
+      <div class="flex flex-col">
+        <nuxt-picture
+          :src="article.headerImage"
+          class="headerImage"
+          alt=""
+        ></nuxt-picture>
+        <div class="card p-4 lg:p-12">
+          <header>
+            <h1 class="font-bold text-5xl py-4">
+              {{ article.title }}
+            </h1>
+            <div class="flex text-sm flex-col w-full">
+              <div class="text-xs flex flex-row justify-between">
+                <read-time :readingTime="article.readingTime" class="py-1" />
+                <published-at :date="article.createdAt" class="py-1" />
               </div>
-            </header>
-            <div class="px-4">
-              <nuxt-content :document="article" />
             </div>
+          </header>
+          <div>
+            <nuxt-content :document="article" />
           </div>
-        </div>
-        <div class="">
-          <social-share-bar />
         </div>
       </div>
       <div class="card px-2">
@@ -50,9 +45,22 @@
 
 <style>
 img {
-  @apply rounded-sm shadow-sm;
+  @apply rounded-sm shadow-sm mx-auto;
   max-height: 40vh;
 }
+
+.headerImage img {
+  @apply w-full object-cover;
+}
+
+article ol {
+  @apply list-decimal ml-8
+}
+
+article a {
+  @apply text-purple-500
+}
+
 </style>
 
 <script>

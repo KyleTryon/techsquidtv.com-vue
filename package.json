@@ -20,7 +20,8 @@
     "nuxt": "^2.15.7",
     "prism-themes": "^1.8.0",
     "reading-time": "^1.4.0",
-    "vue-composable": "^1.0.0-beta.23"
+    "vue-composable": "^1.0.0-beta.23",
+    "vue-youtube-embed": "^2.2.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
