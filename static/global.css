@@ -1,3 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add the lines below */
+@layer utilities {
+  @variants responsive {
+    .masonry-2 {
+      column-count: 2;
+      column-gap: 0.5rem;
+    }
+    .masonry-1 {
+      column-count: 1;
+      column-gap: 0.5rem;
+    }
+    .break-inside {
+      break-inside: avoid;
+    }
+  }
+}
+
+
 html {
   box-sizing: border-box;
   margin: 0;
@@ -36,11 +58,15 @@ main {
 }
 
 .card {
-  @apply rounded-sm bg-white my-2 pb-2 shadow-sm dark:bg-gray-800;
+  @apply rounded-sm bg-white mx-1 pb-2 shadow-sm dark:bg-gray-800;
 }
 
 .card p {
   @apply text-lg leading-7 py-4;
+}
+
+.card h2 {
+  @apply text-3xl
 }
 
 .blockedText {

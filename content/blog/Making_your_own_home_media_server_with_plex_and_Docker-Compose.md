@@ -1,6 +1,6 @@
 ---
 title: Making Your Own Home Media Server With Plex And Docker-Compose
-description: Is your VPS provider giving you adequate upload and download speeds? Use the speedtest-cli package to run a speed test from the terminal
+description: Become the ultimate cord cutter and make your own Netflix-like service at home with an old computer and Plex.
 headerImage: ./posts/img/vps-speed.png
 tags:
   - linux

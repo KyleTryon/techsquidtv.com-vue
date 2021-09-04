@@ -1,6 +1,6 @@
 ---
 title: Will We Ever Be Able To Download Our Brains Like In Westworld?
-description: Is your VPS provider giving you adequate upload and download speeds? Use the speedtest-cli package to run a speed test from the terminal
+description: AI an Machine Learning have advanced far enough to give us a glimpse at what's to come in the next few years. Will humans ever be able to "download" their brains?
 headerImage: ./posts/img/vps-speed.png
 tags:
   - linux

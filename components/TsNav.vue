@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-0 lg:static w-full font-sans dark:bg-gray-800 lg:bg-white z-50">
+  <nav class="fixed top-0 lg:static w-full font-sans dark:bg-gray-800 lg:bg-white z-50 lg:shadow-sm">
     <div
       class="
         mainContainer
@@ -149,7 +149,7 @@
           v-show="isToggled || lg || xl"
           class="lg:flex flex-col lg:flex-row bg-white dark:bg-gray-800 shadow-sm lg:shadow-none items-center">
           <li class="navItem" v-for="page in pages" :key="page.title">
-            <NuxtLink :to="page.url" active-class="activeNavItem" class="hoverItem">
+            <NuxtLink :to="page.url" active-class="activeNavItem" class="hoverItem" v-on:click.native="navHandler()">
               <span class="px-4">
                 {{ page.title }}
               </span>
@@ -195,6 +195,13 @@ export default {
       ],
     }
   },
+  methods: {
+    navHandler() {
+      if (!this.lg) {
+        this.isToggled = false
+      }
+    }
+  }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <main class="mainContainer">
-    <ul class="grid md:grid-cols-2 gap-6">
-      <li v-for="post in posts" :key="post.title" class="md:first:col-span-2">
+    <ul class="masonry-1 md:masonry-2">
+      <li v-for="post in posts" :key="post.title" class="break-inside mb-4">
         <nuxt-link :to="post.path">
           <article-card
             :title="post.title"

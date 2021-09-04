@@ -3,7 +3,7 @@
     <div
       class="flex flex-col w-full h-full justify-center items-center text-6xl">
       <h1 class="blockedText">Follow</h1>
-      <section class="flex flex-wrap min-h-80 card">
+      <section class="flex flex-wrap min-h-80 card my-2">
         <a href="https://twitter.com/TechSquidTV" class="socialBanner border-blue-400 text-blue-400">
           <svg
             class="svgIcon"
@@ -57,5 +57,6 @@
 }
 .svgIcon {
   @apply w-full fill-current;
+  min-width: 6rem;
 }
 </style>

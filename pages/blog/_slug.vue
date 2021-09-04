@@ -1,13 +1,14 @@
 <template>
   <main class="mainContainer">
-    <article class="">
-      <div class="flex flex-col">
+    <article class="articleContainer grid grid-cols-12">
+      <div class="col-span-12 lg:col-span-11">
         <nuxt-picture
           :src="article.headerImage"
           class="headerImage"
           alt=""
         ></nuxt-picture>
-        <div class="card p-4 lg:p-12">
+      </div>
+        <div class="card col-span-12 lg:col-span-11 p-4 lg:p-12">
           <header>
             <h1 class="font-bold text-5xl py-4">
               {{ article.title }}
@@ -23,22 +24,24 @@
             <nuxt-content :document="article" />
           </div>
         </div>
-      </div>
-      <div class="card px-2">
-        <script
-          src="https://giscus.app/client.js"
-          data-repo="KyleTryon/techsquidtv.com"
-          data-repo-id="MDEwOlJlcG9zaXRvcnk0MDA2OTYzMzk="
-          data-category="Blog Comments"
-          data-category-id="DIC_kwDOF-IkE84B-3RT"
-          data-mapping="title"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-theme="light"
-          crossorigin="anonymous"
-          async
-        ></script>
-      </div>
+        <div class="col-span-12 lg:col-span-1">
+          <social-share-bar :title="article.title"/>
+        </div>
+        <div class="card col-span-12 lg:col-span-11 px-2">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="KyleTryon/techsquidtv.com"
+            data-repo-id="MDEwOlJlcG9zaXRvcnk0MDA2OTYzMzk="
+            data-category="Blog Comments"
+            data-category-id="DIC_kwDOF-IkE84B-3RT"
+            data-mapping="title"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-theme="light"
+            crossorigin="anonymous"
+            async
+          ></script>
+        </div>
     </article>
   </main>
 </template>
@@ -53,18 +56,20 @@ img {
   @apply w-full object-cover;
 }
 
-article ol {
-  @apply list-decimal ml-8
+.articleContainer ol {
+  @apply list-decimal ml-8;
 }
 
-article a {
-  @apply text-purple-500
+.articleContainer a {
+  @apply text-purple-500;
 }
 
 </style>
 
 <script>
+import SocialShareBar from '~/components/SocialShareBar.vue'
 export default {
+  components: { SocialShareBar },
   async asyncData({ $content, params, error }) {
     const slug = params.slug || 'index'
     const article = await $content('blog', slug)
