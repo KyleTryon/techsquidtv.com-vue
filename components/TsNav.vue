@@ -184,10 +184,7 @@ export default {
           title: 'about',
           url: '/about',
         },
-        {
-          title: 'follow',
-          url: '/follow',
-        },
+
         {
           title: 'contact',
           url: '/contact',
