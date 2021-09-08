@@ -7,7 +7,7 @@
       lg:sticky
       lg:top-12
       dark:bg-gray-800;
-      p-2
+      py-2
       justify-center
       items-center
     "

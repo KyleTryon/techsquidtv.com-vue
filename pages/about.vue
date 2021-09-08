@@ -9,7 +9,7 @@
       </div>
       <span class="m-4 flex-1">
         <div class="">
-          <h1 class="p-2 text-4xl font-black blockedText">Kyle Tryon</h1>
+          <h1 class="p-2 text-4xl blockedText">Kyle Tryon</h1>
         </div>
         <div>
           <p class="blockedText">
@@ -113,7 +113,7 @@
     </div>
     <section class="text-lg card">
       <div class="p-4">
-        <h1 class="text-2xl font-black">About Me</h1>
+        <h1 class="text-2xl">About Me</h1>
         <p>
           Hello! I'm from a small town in southern New Jersey, now living in
           Philadelphia. I currently work remotely for the worlds largest CI/CD
@@ -121,7 +121,7 @@
           with many partners in the DevOps industry.
         </p>
 
-        <h1 class="text-2xl font-black">My Journey</h1>
+        <h1 class="text-2xl">My Journey</h1>
         <p>
           In 2016, while still working retail, I had just completed my
           associates degree from a technical college that had been closed down

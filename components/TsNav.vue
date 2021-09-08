@@ -1,7 +1,10 @@
 <template>
-  <nav class="fixed top-0 lg:static w-full font-sans dark:bg-gray-800 lg:bg-white z-50 lg:shadow-sm">
+  <nav class="fixed top-0 lg:static w-full font-sans bg-none lg:bg-white lg:dark:bg-gray-800 z-50 lg:shadow-sm">
     <div
       class="
+        px-0
+        md:px-0
+        lg:px-0
         mainContainer
         flex flex-col
         lg:flex-row

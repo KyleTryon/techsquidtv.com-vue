@@ -12,7 +12,7 @@ That was until I rebooted my computer and noticed my keyboard was mysteriously w
 
 A little Googling and it was easy to find [the culprit](https://developer.chrome.com/apps/commands). Chrome plugins!
 
-To Fix it:
+## Quick Fix
 
 1. Check your currently installed apps and extensions here: [chrome://apps/](chrome://apps/) and [chrome://extensions/](chrome://extensions/)
 2. Check for media apps, music players, things like [Google Play Music](https://chrome.google.com/webstore/detail/google-play-music/fahmaaghhglfmonjliepjlchgpgfmobi/related) and Plex and disable them.
@@ -22,6 +22,8 @@ To Fix it:
 **You’re done!**
 
 Once you remove the app or extension hijacking the media keys, Spotify and other desktop applications will work properly.
+
+## What causes this?
 
 If you are curious about why this happens you can check out the “commands API” for chrome extension developers. Extensions are able to make use of the [commands API](https://developer.chrome.com/apps/commands) to execute commands via keyboard shortcut. An app like Google Play Music would use this functionality to detect when the `play/pause` (or other keys) are pressed to control the media player.
 

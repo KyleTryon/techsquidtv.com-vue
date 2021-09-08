@@ -1,7 +1,7 @@
 <template>
   <main class="mainContainer">
-    <ul class="masonry-1 md:masonry-2">
-      <li v-for="post in posts" :key="post.title" class="break-inside mb-4">
+    <ul class="grid md:masonry-2">
+      <li v-for="(post, index) in posts" :key="index" class="break-inside" :class="{ 'thisisfirst': index === 0 }">
         <nuxt-link :to="post.path">
           <article-card
             :title="post.title"
@@ -16,6 +16,16 @@
     </ul>
   </main>
 </template>
+
+<style>
+@layer utilities {
+  @variants responsive {
+    .latestArticle {
+      grid-column: 1 / span 2;
+    }
+  }
+}
+</style>
 
 <script>
 export default {

@@ -8,7 +8,7 @@ tags:
 
 I have been a user of Plex Media Server for the past 3 years and I haven't looked back since. For those looking to get into hosting your own content at home, there is no better place to get started. Creating your own home media server is easy, fun, and a great learning exercise.
 
-## What You Need:
+## What You Need
 
 * A computer to act as our server
 * Hard drives for storage. Internal or USB is fine.
@@ -28,7 +28,7 @@ Plex offers quite a bit out of the box completely for free and it continuously g
 
 But for the sake of argument and awareness, let's take a quick look at Plex some modern alternatives you may want to consider.
 
-## Plex Alternatives:
+## Plex Alternatives
 
 ### 1. Emby
 The biggest competitor to Plex is also open source. Emby also has its own premium subscription that is on par price-wise as Plex. Though, some of the features such as access to podcasts or the ability to stream to a TV, are features that are free on Plex already.
@@ -87,14 +87,6 @@ If not, you'll need to create a directory and mount the drive to that directory.
 
 ### 1. Create a directory where you will access the data.
 
-```shell
-mkdir /<Where you want to mount data>
-```
-
-```shell
-mount /dev/<Storage device>/<Where you mounted your data>
-```
-
 ### 4. Write your Docker-Compose.yml file
 We've already made a video and a blog post about the specifics of Docker-Compose if you are looking for an in-depth Docker-Compose tutorial.
 
@@ -102,29 +94,9 @@ We've already made a video and a blog post about the specifics of Docker-Compose
 
 However in this tutorial, we will only need the example already given to us by the docs for the Plex Docker image we are going to be using.
 
-We will be using `linuxserver/plex` created by the fine people at  linuxserver.io. The Docker image docs can be found on its DockerHub page here: [https://hub.docker.com/r/linuxserver/plex/](https://hub.docker.com/r/linuxserver/plex/)
+We will be using `linuxserver/plex` created by the fine people at  linuxserver.io. The Docker image docs can be found on its DockerHub page here: [docker.com/r/linuxserver/plex/](https://hub.docker.com/r/linuxserver/plex/)
 
 ## Plex Docker-compose.yml:
-
-```yaml
----
-version: "2"
-services:
-  plex:
-    image: linuxserver/plex
-    container_name: plex
-    network_mode: host
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - VERSION=docker
-    volumes:
-      - </path/to/library>:/config
-      - <path/to/tvseries>:/data/tvshows
-      - </path/to/movies>:/data/movies
-      - </path for transcoding>:/transcode
-    restart: unless-stopped
-```
 
 Everything is good to go here as-is, except for the volumes (and possibly the PUID and PGID). The volumes you want to change the paths to the hard drives you have mounted.
 

@@ -1,59 +1,92 @@
 <template>
   <main class="mainContainer">
-    <article class="articleContainer grid grid-cols-12">
-      <div class="col-span-12 lg:col-span-11">
+    <article class="grid grid-layout-1 lg:grid-layout-3">
+      <div class="grid-item headerArea lg:headerArea-lg">
         <nuxt-picture
           :src="article.headerImage"
           class="headerImage"
           alt=""
         ></nuxt-picture>
       </div>
-        <div class="card col-span-12 lg:col-span-11 p-4 lg:p-12">
-          <header>
-            <h1 class="font-bold text-5xl py-4">
-              {{ article.title }}
-            </h1>
-            <div class="flex text-sm flex-col w-full">
-              <div class="text-xs flex flex-row justify-between">
-                <read-time :readingTime="article.readingTime" class="py-1" />
-                <published-at :date="article.createdAt" class="py-1" />
-              </div>
+      <div class="grid-item lg:tocArea-lg mx-auto">
+        <table-of-contents :toc="article.toc" :currentChapter="currentChapter" />
+      </div>
+      <div class="grid-item contentArea lg:contentArea-lg card px-4 lg:px-8">
+        <header>
+          <h1 class="text-3xl lg:text-5xl py-6">
+            {{ article.title }}
+          </h1>
+          <div class="flex text-sm flex-col w-full mb-2">
+            <div class="text-xs flex flex-row justify-between">
+              <read-time :readingTime="article.readingTime" class="py-1" />
+              <published-at :date="article.createdAt" class="py-1" />
             </div>
-          </header>
-          <div>
-            <nuxt-content :document="article" />
           </div>
+        </header>
+        <div>
+          <nuxt-content :document="article" />
         </div>
-        <div class="col-span-12 lg:col-span-1">
-          <social-share-bar :title="article.title"/>
-        </div>
-        <div class="card col-span-12 lg:col-span-11 px-2">
-          <script
-            src="https://giscus.app/client.js"
-            data-repo="KyleTryon/techsquidtv.com"
-            data-repo-id="MDEwOlJlcG9zaXRvcnk0MDA2OTYzMzk="
-            data-category="Blog Comments"
-            data-category-id="DIC_kwDOF-IkE84B-3RT"
-            data-mapping="title"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-theme="light"
-            crossorigin="anonymous"
-            async
-          ></script>
-        </div>
+      </div>
+      <div class="grid-item lg:socialArea-lg">
+        <social-share-bar :title="article.title" />
+      </div>
+      <div class="grid-item lg:commentArea-lg">
+        <script
+          src="https://giscus.app/client.js"
+          data-repo="KyleTryon/techsquidtv.com"
+          data-repo-id="MDEwOlJlcG9zaXRvcnk0MDA2OTYzMzk="
+          data-category="Blog Comments"
+          data-category-id="DIC_kwDOF-IkE84B-3RT"
+          data-mapping="title"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-theme="light"
+          crossorigin="anonymous"
+          async
+        ></script>
+      </div>
     </article>
   </main>
 </template>
 
 <style>
-img {
-  @apply rounded-sm shadow-sm mx-auto;
-  max-height: 40vh;
+@layer utilities {
+  @variants responsive {
+    .grid-layout-3 {
+      column-count: 3;
+      grid-template-columns: 2fr 9.5fr 0.5fr;
+    }
+
+    .headerArea-lg {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+    }
+
+    .contentArea-lg {
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 1;
+    }
+
+    .socialArea-lg {
+      grid-column: 3 / span 1;
+      grid-row: 2 / span 1;
+    }
+
+    .tocArea-lg {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
+    }
+
+    .commentArea-lg {
+      grid-column: 2 / span 1;
+      grid-row: 3 / span 1;
+    }
+  }
 }
 
-.headerImage img {
-  @apply w-full object-cover;
+.grid-item {
+  min-width: 0;
+  min-height: 0;
 }
 
 .articleContainer ol {
@@ -63,13 +96,22 @@ img {
 .articleContainer a {
   @apply text-purple-500;
 }
-
 </style>
 
 <script>
 import SocialShareBar from '~/components/SocialShareBar.vue'
 export default {
   components: { SocialShareBar },
+  data() {
+    return {
+      currentChapter: '',
+      observer: null,
+      observerOptions: {
+        root: this.$refs.nuxtContent,
+        threshold: 0.5,
+      },
+    }
+  },
   async asyncData({ $content, params, error }) {
     const slug = params.slug || 'index'
     const article = await $content('blog', slug)
@@ -80,6 +122,25 @@ export default {
     return {
       article,
     }
+  },
+  mounted() {
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute('id')
+        if (entry.isIntersecting) {
+          this.currentChapter = id
+        }
+      })
+    }, this.observerOptions)
+    // Track all sections that have an `id` applied
+    document
+      .querySelectorAll('.nuxt-content h2[id]')
+      .forEach((section) => {
+        this.observer.observe(section)
+      })
+  },
+  beforeDestroy() {
+    this.observer.disconnect()
   },
   head() {
     return {

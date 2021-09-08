@@ -10,6 +10,8 @@ When looking for a VPS (virtual private server) provider, many list the specs an
 
 It might be helpful to test out the network speed to some of the locations you’ll expect users to connect from. And, thanks to GitHub user @Sivel we can use their python-based CLI for the popular website speedtest.net – speedtest-cli.
 
+## Install speedtest-cli
+
 **If Python is installed…**
 
 You can install the speedtest-cli via pip
