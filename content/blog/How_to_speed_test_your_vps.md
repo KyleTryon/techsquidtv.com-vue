@@ -4,6 +4,7 @@ description: Is your VPS provider giving you adequate upload and download speeds
 headerImage: ./posts/img/vps-speed.png
 tags:
   - linux
+createdAt: 1533441600000
 ---
 
 When looking for a VPS (virtual private server) provider, many list the specs and features publicly but often neglect to share the network speed. That’s probably fair since it’s really difficult to give an accurate “speed” when servers are often located all over the world and so are your users.

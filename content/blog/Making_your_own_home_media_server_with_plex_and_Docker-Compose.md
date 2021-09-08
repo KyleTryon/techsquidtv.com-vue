@@ -4,6 +4,8 @@ description: Become the ultimate cord cutter and make your own Netflix-like serv
 headerImage: ./posts/img/vps-speed.png
 tags:
   - linux
+  - docker
+createdAt: 1556769600000
 ---
 
 I have been a user of Plex Media Server for the past 3 years and I haven't looked back since. For those looking to get into hosting your own content at home, there is no better place to get started. Creating your own home media server is easy, fun, and a great learning exercise.

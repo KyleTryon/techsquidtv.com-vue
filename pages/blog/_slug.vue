@@ -2,14 +2,22 @@
   <main class="mainContainer">
     <article class="grid grid-layout-1 lg:grid-layout-3">
       <div class="grid-item headerArea lg:headerArea-lg">
+        <yt-video
+          v-if="article.headerVideoID"
+          :vid="article.headerVideoID"
+        ></yt-video>
         <nuxt-picture
+          v-else
           :src="article.headerImage"
           class="headerImage"
           alt=""
         ></nuxt-picture>
       </div>
       <div class="grid-item lg:tocArea-lg mx-auto">
-        <table-of-contents :toc="article.toc" :currentChapter="currentChapter" />
+        <table-of-contents
+          :toc="article.toc"
+          :currentChapter="currentChapter"
+        />
       </div>
       <div class="grid-item contentArea lg:contentArea-lg card px-4 lg:px-8">
         <header>
@@ -19,7 +27,7 @@
           <div class="flex text-sm flex-col w-full mb-2">
             <div class="text-xs flex flex-row justify-between">
               <read-time :readingTime="article.readingTime" class="py-1" />
-              <published-at :date="article.createdAt" class="py-1" />
+              <published-at :created="article.createdAt" :updated="article.updatedAt" class="py-1" />
             </div>
           </div>
         </header>
@@ -84,6 +92,10 @@
   }
 }
 
+iframe {
+  @apply mx-auto
+}
+
 .grid-item {
   min-width: 0;
   min-height: 0;
@@ -100,8 +112,9 @@
 
 <script>
 import SocialShareBar from '~/components/SocialShareBar.vue'
+import YtVideo from '~/components/YtVideo.vue'
 export default {
-  components: { SocialShareBar },
+  components: { SocialShareBar, YtVideo },
   data() {
     return {
       currentChapter: '',
@@ -133,11 +146,9 @@ export default {
       })
     }, this.observerOptions)
     // Track all sections that have an `id` applied
-    document
-      .querySelectorAll('.nuxt-content h2[id]')
-      .forEach((section) => {
-        this.observer.observe(section)
-      })
+    document.querySelectorAll('.nuxt-content h2[id]').forEach((section) => {
+      this.observer.observe(section)
+    })
   },
   beforeDestroy() {
     this.observer.disconnect()

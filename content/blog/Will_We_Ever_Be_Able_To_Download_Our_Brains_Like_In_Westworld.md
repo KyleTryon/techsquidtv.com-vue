@@ -4,6 +4,7 @@ description: AI an Machine Learning have advanced far enough to give us a glimps
 headerImage: ./posts/img/vps-speed.png
 tags:
   - linux
+createdAt: 1533427200000
 ---
 
 If you haven’t seen HBO’s _**“Westworld”**_ then… eh, actually honestly, it’s a toss up, it’s up to you. Personally I think they over promised and under delivered, BUT it’s worth talking about because they went over some amazing concepts.

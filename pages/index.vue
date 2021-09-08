@@ -1,15 +1,18 @@
 <template>
   <main class="mainContainer">
-    <ul class="grid md:masonry-2">
-      <li v-for="(post, index) in posts" :key="index" class="break-inside" :class="{ 'thisisfirst': index === 0 }">
+    <ul class="grid grid-layout-1 md:masonry-2 items-stretch">
+      <li v-for="(post, index) in posts" :key="index" class="break-inside" :class="{ 'md:latestArticle': index === 0 }">
         <nuxt-link :to="post.path">
           <article-card
+            class="h-full pb-2"
             :title="post.title"
             :description="post.description"
             :image="post.headerImage"
             :tags="post.categories"
             :createdAt="post.createdAt"
+            :updatedAt="post.updatedAt"
             :readingTime="post.readingTime"
+            :video="post.headerVideoID"
           />
         </nuxt-link>
       </li>

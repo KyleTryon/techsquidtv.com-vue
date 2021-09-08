@@ -1,9 +1,10 @@
 ---
 title: Keyboard Media Keys Not Working? It’s Chrome’s Fault
 description: Ever noticed you haven't been able to use your keyboard's media keys to play and pause music while chrome is open? Let's see why.
-headerImage: ./posts/img/vps-speed.png
+headerImage: ./posts/img/audio-issues.jpg
 tags:
   - chrome
+createdAt: 1550707200000
 ---
 
 Have you ever been using Spotify or iTunes on your computer while browsing Reddit and you go to hit the next or play/pause key on your keyboard and nothing happens? Me too! And it was driving me nuts.
