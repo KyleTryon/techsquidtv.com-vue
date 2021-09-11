@@ -9,7 +9,8 @@
       </div>
     </div>
     <div class="flex-1">
-      <nuxt-picture :src="post.headerImage" fit="cover" class="block h-full"/>
+      <yt-video v-if="post.headerVideoID" :vid="post.headerVideoID"></yt-video>
+      <nuxt-picture v-else :src="post.headerImage" fit="cover" class="block h-full"/>
     </div>
   </div>
 </template>

@@ -27,7 +27,11 @@
           <div class="flex text-sm flex-col w-full mb-2">
             <div class="text-xs flex flex-row justify-between">
               <read-time :readingTime="article.readingTime" class="py-1" />
-              <published-at :created="article.createdAt" :updated="article.updatedAt" class="py-1" />
+              <published-at
+                :created="article.createdAt"
+                :updated="article.updatedAt"
+                class="py-1"
+              />
             </div>
           </div>
         </header>
@@ -37,6 +41,9 @@
       </div>
       <div class="grid-item lg:socialArea-lg">
         <social-share-bar :title="article.title" />
+      </div>
+      <div class="grid-item lg:newsletterArea-lg">
+        <revue-signup />
       </div>
       <div class="grid-item lg:commentArea-lg">
         <script
@@ -85,15 +92,20 @@
       grid-row: 2 / span 1;
     }
 
-    .commentArea-lg {
+    .newsletterArea-lg {
       grid-column: 2 / span 1;
       grid-row: 3 / span 1;
+    }
+
+    .commentArea-lg {
+      grid-column: 2 / span 1;
+      grid-row: 4 / span 1;
     }
   }
 }
 
 iframe {
-  @apply mx-auto
+  @apply mx-auto;
 }
 
 .grid-item {
@@ -101,12 +113,12 @@ iframe {
   min-height: 0;
 }
 
-.articleContainer ol {
+article ol {
   @apply list-decimal ml-8;
 }
 
-.articleContainer a {
-  @apply text-purple-500;
+article h2 {
+  @apply text-3xl;
 }
 </style>
 

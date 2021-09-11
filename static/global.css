@@ -62,15 +62,11 @@ main {
 }
 
 .card {
-  @apply rounded-sm bg-white pb-2 shadow-sm dark:bg-gray-800;
+  @apply rounded-sm bg-white pb-2 shadow-sm hover:shadow-md transition-all delay-300 dark:bg-gray-800;
 }
 
 .card p {
   @apply text-lg leading-7 py-4;
-}
-
-.card h2 {
-  @apply text-3xl;
 }
 
 .blockedText {

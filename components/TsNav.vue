@@ -180,8 +180,8 @@ export default {
           url: '/blog',
         },
         {
-          title: 'videos',
-          url: '/videos',
+          title: 'follow',
+          url: '/follow',
         },
         {
           title: 'about',
