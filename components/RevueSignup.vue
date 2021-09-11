@@ -91,7 +91,7 @@
         <h1 class="text-2xl">The Full Stack</h1>
       </div>
       <div class="flex-1 p-2">
-        <h1 class="text-4xl">Join "The Full Stack" Newsletter</h1>
+        <h1 class="text-4xl">Join "The Full Stack" Newsletter ✉️</h1>
         <form
         action="https://www.getrevue.co/profile/techsquidtv/add_subscriber"
         method="post"
@@ -154,7 +154,7 @@
 }
 
 .revue-form-group input {
-  @apply block w-full my-1 rounded-sm p-1 border;
+  @apply block w-full my-1 rounded-md p-1 border border-gray-700 text-center;
 }
 
 #member_submit {

@@ -39,7 +39,7 @@
 }
 
 .socialCard {
-  @apply p-6 m-2 rounded-sm bg-gray-100 hover:shadow-md shadow-sm transition-all duration-300 hover:scale-110 hover:bg-purple-500 dark:bg-gray-600
+  @apply p-6 m-2 rounded-sm bg-gray-200 hover:shadow-md shadow-sm transition-all duration-300 hover:scale-110 hover:bg-purple-500 dark:bg-gray-600
 }
 
 </style>

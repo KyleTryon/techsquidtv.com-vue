@@ -5,7 +5,7 @@
       <p>{{post.description}}</p>
       <div >
         <read-time :readingTime="post.readingTime" class="py-1" />
-        <published-at :date="post.createdAt" class="py-1" />
+        <published-at :created="post.createdAt" :updated="post.updatedAt" class="py-1" />
       </div>
     </div>
     <div class="flex-1">
