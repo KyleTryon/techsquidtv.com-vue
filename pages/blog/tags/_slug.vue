@@ -1,0 +1,37 @@
+<template>
+  <main class="mainContainer">
+    <div class="card">
+    <div class="p-4">
+      <h1 class="4xl">{{slug}}</h1>
+      <ul>
+        <li v-for="post in posts" :key="post.id">
+          <nuxt-link :to="post.path">
+            <blog-list-item :post="post" />
+          </nuxt-link>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </main>
+</template>
+
+<script>
+export default {
+  async asyncData({ $content, params, error }) {
+    const slug = params.slug
+    const posts = await $content('blog')
+      .where({
+        tags: {
+          $contains: params.slug
+        }
+      })
+      .fetch()
+      .catch(() => {
+        error({ statusCode: 404, message: 'Failed to fetch post' })
+      })
+    return {
+      posts, slug
+    }
+  },
+}
+</script>

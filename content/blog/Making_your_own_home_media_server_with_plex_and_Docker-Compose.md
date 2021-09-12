@@ -1,7 +1,7 @@
 ---
 title: Making Your Own Home Media Server With Plex And Docker-Compose
 description: Become the ultimate cord cutter and make your own Netflix-like service at home with an old computer and Plex.
-headerImage: ./posts/img/vps-speed.png
+headerImage: ./posts/img/Plex-Server.png
 tags:
   - linux
   - docker

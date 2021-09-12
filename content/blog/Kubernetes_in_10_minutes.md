@@ -5,6 +5,9 @@ headerImage: ./posts/img/vps-speed.png
 headerVideoID: RaM1DFqQOm4
 tags:
   - linux
+  - k8s
+  - kubernetes
+  - docker
 createdAt: 1599350400000
 ---
 

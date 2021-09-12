@@ -3,7 +3,8 @@ title: Will We Ever Be Able To Download Our Brains Like In Westworld?
 description: AI an Machine Learning have advanced far enough to give us a glimpse at what's to come in the next few years. Will humans ever be able to "download" their brains?
 headerImage: ./posts/img/download_brain.png
 tags:
-  - linux
+  - AI
+  - Machine Learning
 createdAt: 1533427200000
 ---
 

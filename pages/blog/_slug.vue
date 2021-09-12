@@ -18,10 +18,17 @@
           :toc="article.toc"
           :currentChapter="currentChapter"
         />
+        <div class="flex flex-row flex-wrap p-2 rounded border mx-2">
+          <nuxt-link v-for="tag in article.tags" :key="tag" :to='"/blog/tags/"+tag'>
+            <div class="m-2">
+              <span class="text-xs bg-purple-400 rounded-sm shadow-sm p-1 text-white">{{ tag }}</span>
+            </div>
+          </nuxt-link>
+        </div>
       </div>
       <div class="grid-item contentArea lg:contentArea-lg card px-4 lg:px-8">
         <header>
-          <h1 class="text-3xl lg:text-5xl py-6">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-6">
             {{ article.title }}
           </h1>
           <div class="flex text-sm flex-col w-full mb-2">

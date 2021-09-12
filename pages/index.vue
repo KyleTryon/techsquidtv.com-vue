@@ -34,6 +34,7 @@
 export default {
   async asyncData({ $content, error }) {
     const posts = await $content('blog')
+      .sortBy('createdAt', 'desc')
       .fetch()
       .catch(() => {
         error({ statusCode: 404, message: 'Failed to fetch post' })
