@@ -1,5 +1,5 @@
 <template>
-  <aside class="hidden lg:block lg:sticky lg:top-12 p-2">
+  <aside class="p-2">
     <ul>
       <li v-for="chapter in titles" :key="chapter.id" class="py-1">
         <a :href='"#" + chapter.id'

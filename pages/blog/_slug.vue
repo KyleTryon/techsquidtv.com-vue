@@ -14,16 +14,32 @@
         ></nuxt-picture>
       </div>
       <div class="grid-item lg:tocArea-lg mx-auto">
-        <table-of-contents
-          :toc="article.toc"
-          :currentChapter="currentChapter"
-        />
-        <div class="flex flex-row flex-wrap p-2 rounded border mx-2">
-          <nuxt-link v-for="tag in article.tags" :key="tag" :to='"/blog/tags/"+tag'>
-            <div class="m-2">
-              <span class="text-xs bg-purple-400 rounded-sm shadow-sm p-1 text-white">{{ tag }}</span>
-            </div>
-          </nuxt-link>
+        <div class="hidden lg:block lg:sticky lg:top-12">
+          <table-of-contents
+            :toc="article.toc"
+            :currentChapter="currentChapter"
+          />
+          <div class="flex flex-row flex-wrap p-2 rounded border mx-2">
+            <nuxt-link
+              v-for="tag in article.tags"
+              :key="tag"
+              :to="'/blog/tags/' + tag"
+            >
+              <div class="m-2">
+                <span
+                  class="
+                    text-xs
+                    bg-purple-400
+                    rounded-sm
+                    shadow-sm
+                    p-1
+                    text-white
+                  "
+                  >{{ tag }}</span
+                >
+              </div>
+            </nuxt-link>
+          </div>
         </div>
       </div>
       <div class="grid-item contentArea lg:contentArea-lg card px-4 lg:px-8">
@@ -126,6 +142,14 @@ article ol {
 
 article h2 {
   @apply text-3xl;
+}
+
+article h3 {
+  @apply text-2xl;
+}
+
+article h4 {
+  @apply text-xl;
 }
 </style>
 
