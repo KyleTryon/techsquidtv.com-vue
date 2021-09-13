@@ -75,11 +75,11 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     // https://sitemap.nuxtjs.org/
-    '@nuxtjs/sitemap',
+    // '@nuxtjs/sitemap',
   ],
 
   sitemap: {
-    hostname: 'website.com'
+    hostname: 'techsquidtv.com'
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
