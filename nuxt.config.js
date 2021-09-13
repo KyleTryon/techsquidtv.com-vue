@@ -65,6 +65,7 @@ export default {
   generate: {
     // choose to suit your project
     interval: 2000,
+    fallback: true
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
