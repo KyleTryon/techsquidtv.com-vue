@@ -57,7 +57,11 @@ One option is to look into static-site generation. The low (essentially zero) te
 
 ### Reliability
 
-The biggest issue that really dove me to breakup with WordPress was not the $12/month cost, but the lack of reliability that often left my website offline. Now, some smarter deployment or managed hosting could have resolved this but because of a memory leak, the server would crash and the site would be unavailable. This blog used to be hosted on a VPS using Docker-Compose on a single node server with both the WordPress installation and a database. What would happen, is after several days or weeks of being online, I would come to find my site was offline. When logging into the VPS panel I could see memory usage had been steadily creeping up and its likely the docker containers were crashing, though I never bothered to see what kept them from recovering.
+The biggest issue that really dove me to breakup with WordPress was not the $12/month cost, but the lack of reliability that often left my website offline. Now, some smarter deployment or managed hosting could have resolved this but because of some sort of "leak", the server would crash periodically hit 100% CPU and the site would be unavailable.
+
+<nuxt-picture src="./posts/img/vultr-cpu-leak.jpg"></nuxt-picture>
+
+This blog used to be hosted on a VPS using Docker-Compose on a single node server with both the WordPress installation and a database. What would happen, is after several days or weeks of being online, I would come to find my site was offline. When logging into the VPS panel I could see CPU usage had been steadily creeping up and its likely why the docker containers were crashing, though I never bothered to see what kept them from recovering.
 
 With a statically hosted site and no backend to worry about, at essentially infinite scale, there will never be a concern the website will be down (unless it's a DNS issue...).
 
@@ -123,6 +127,12 @@ You _could_ say that this is a savings of $3/month, on top of the added stabilit
 ## Conclusion
 
 Netlify has too many free benefits to fit into this article, but with no downsides to speak of and several advanced features for free, there is reason not to try it for your static site. the free version is more than adequate and clearly superior to the GitHub Pages offering. Best of all there is nothing you stopping you from enjoying the best of both worlds if you wish.
+
+Admittedly, this screen shot was taken after a small optimization pass where I enabled lazy-loading of images and videos. So while not quite my _first_ pass, with little effort we have at minimum matched and in some ways exceeded the performance of the premium WordPress theme.
+
+<nuxt-picture src="./posts/img/nuxt-v-wordpress-speed.jpg" alt="Speed comparison old WordPress Website vs. new Nuxt site" fit="contain"></nuxt-picture>
+
+Post-launch, maybe by the time you are reading this, I plan to get all of these in the high 90's without sacrificing any of the experience. As it turns out, most of the issues pretty much all stem from loading YouTube thumbnails.
 
 NuxtJS has been a great choice for me for building the custom experience I want for my blog and will make it easy to tweak and update in the future. There's going to be many more blog posts about how this blog was built and the many changes, optimizations, and improvements that are yet to come.
 
