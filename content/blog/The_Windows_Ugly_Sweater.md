@@ -3,6 +3,7 @@ title: 'The #WindowsUglySweater Is The Only Swag I Care About'
 description: AI an Machine Learning have advanced far enough to give us a glimpse at what's to come in the next few years. Will humans ever be able to "download" their brains?
 headerImage: ./posts/img/vps-speed.png
 headerVideoID: 0cdN8EC1wKI
+headerVideoTitle: 'Microsoft made a WindowsXP themed Ugly Holiday Sweater AND I GOT ONE! #WindowsUglySweater (Unboxing)'
 tags:
   - windows
 createdAt: 1577250000000

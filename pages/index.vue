@@ -13,6 +13,7 @@
             :updatedAt="post.updatedAt"
             :readingTime="post.readingTime"
             :video="post.headerVideoID"
+            :vtitle="post.headerVideoTitle"
           />
         </nuxt-link>
       </li>

@@ -2,8 +2,8 @@
   <div>
     <article class="card h-full">
       <div class="cardHeader">
-        <yt-video v-if="video" :vid="video"></yt-video>
-        <nuxt-picture v-else :src="image" fit="cover" height="600px" />
+        <yt-video v-if="video" :vid="video" :title="vtitle"></yt-video>
+        <nuxt-picture v-else :src="image" fit="cover" height="600px" loading="lazy" />
       </div>
       <summary class="p-4">
         <div class="text-xs flex flex-row justify-between">
@@ -22,7 +22,7 @@ import ReadTime from './ReadTime.vue'
 import YtVideo from './YtVideo.vue'
 export default {
   components: { ReadTime, YtVideo },
-  props: ['description', 'title', 'image', 'link', 'createdAt', 'updatedAt', 'readingTime', 'video'],
+  props: ['description', 'title', 'image', 'link', 'createdAt', 'updatedAt', 'readingTime', 'video', 'vtitle'],
 }
 </script>
 

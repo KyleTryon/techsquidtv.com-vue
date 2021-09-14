@@ -8,6 +8,8 @@ tags:
 createdAt: 1556769600000
 ---
 
+<yt-video vid="3eNH4R2YTrw" title="How To Build A 23TB Plex Server With Docker"></yt-video>
+
 I have been a user of Plex Media Server for the past 3 years and I haven't looked back since. For those looking to get into hosting your own content at home, there is no better place to get started. Creating your own home media server is easy, fun, and a great learning exercise.
 
 ## What You Need
@@ -92,7 +94,7 @@ If not, you'll need to create a directory and mount the drive to that directory.
 ### 4. Write your Docker-Compose.yml file
 We've already made a video and a blog post about the specifics of Docker-Compose if you are looking for an in-depth Docker-Compose tutorial.
 
-<yt-video vid="exmBvjlZr7U"></yt-video>
+<yt-video vid="exmBvjlZr7U" title="Learn Docker-Compose with WordPress"></yt-video>
 
 However in this tutorial, we will only need the example already given to us by the docs for the Plex Docker image we are going to be using.
 
@@ -109,13 +111,17 @@ Once finished, save this file to docker-compose.yml in a convenient location on
 ## Start Plex!
 You're ready to rock with your own media server. It's time to flip the switch. Run the following command in the same directory as your newly created docker-compose.yml file.
 
-`docker-compose up -d`
+```
+docker-compose up -d
+```
 
 This will start your Docker compose script as a detached daemon, meaning it will be safe for you to close the terminal when you are done and Plex will continue to run.
 
 Once the Plex server is running you can continue the easy setup via the browser at:
 
-`<your server ip>:32400/web`
+```
+<your server ip>:32400/web
+```
 
 Plex will bring you through a few simple walkthrough steps to sign you into your account on plex.tv and add your media libraries.
 

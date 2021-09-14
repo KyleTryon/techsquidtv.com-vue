@@ -3,6 +3,7 @@ title: Synology’s DS920+ is a NAS powerhouse
 description: Should you buy the long awaited Synology SD920+ NAS? We take a look and review the specs and features.
 headerImage: ./posts/img/vps-speed.png
 headerVideoID: RyWMjyqVXkY
+headerVideoTitle: 'Synology DS920+ | What is RAID 5'
 tags:
   - hardware
 createdAt: 1597464000000

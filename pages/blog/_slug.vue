@@ -5,6 +5,7 @@
         <yt-video
           v-if="article.headerVideoID"
           :vid="article.headerVideoID"
+          :title="article.headerVideoTitle"
         ></yt-video>
         <nuxt-picture
           v-else
@@ -198,7 +199,7 @@ export default {
   },
   head() {
     return {
-      title: `🦑 ${this.article.title}`,
+      title: `${this.article.title}`,
       meta: [
         {
           hid: 'description',

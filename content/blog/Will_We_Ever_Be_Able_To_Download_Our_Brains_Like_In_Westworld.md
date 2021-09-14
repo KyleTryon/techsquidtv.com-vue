@@ -34,7 +34,7 @@ I think, therefore I am
 
 If you can’t tell the difference. Does it matter?
 
-<yt-video vid="1mR9hdy6Qgw"></yt-video>
+<yt-video vid="1mR9hdy6Qgw" title="Are you real? If you can't tell, does it matter?"></yt-video>
 
 Currently, you can not prove anyone you have ever met in your life is not dictated by AI. You are only reasonably sure that you are real and possibly not an AI. Everything else is your subjective reality.
 
@@ -74,7 +74,7 @@ How interesting you ask?
 
 Here is an AI system calling a hair salon, speaking to a human, and booking an appointment, and the human never knew that they were speaking to an AI.
 
-<yt-video vid="JvbHu_bVa_g"></yt-video>
+<yt-video vid="JvbHu_bVa_g" title="Google's AI Assistant Can Now Make Real Phone Calls"></yt-video>
 
 
 What you have just heard is quite possibly one of the largest achievements in A.I. thus far. Do not play down how incredible what just happened was. This bot arguably passed the turing test.
@@ -85,7 +85,7 @@ This is an enormous step in A.I. But, how close is it to replacing you? How good
 
 Let’s go back to that Google Keynote.
 
-<yt-video vid="rk3EVJ2IQzc"></yt-video>
+<yt-video vid="rk3EVJ2IQzc" title="Google I/O 2018 highlights: Android P, Google Lens and AI"></yt-video>
 
 John Legend spent time in a studio with Google training the Google Assistant on John Legend’s voice. You can now ask Google a question and the voice speaking back to you sounds just like John Legend, with all of the little inflections and quirks that make his voice unique (though not perfect).
 
@@ -98,7 +98,7 @@ Adobe is working on a tool that can analyze your speech, perhaps similar to how 
 What does that mean? That means you can make anyone, say anything. Copying all of the characteristics of their voice.
 
 Check out [Adobe’s Project #VoCo](https://en.wikipedia.org/wiki/Adobe_Voco)
-<yt-video vid="I3l4XLZ59iw"></yt-video>
+<yt-video vid="I3l4XLZ59iw" title="#VoCo. Adobe Audio Manipulator Sneak Peak with Jordan Peele | Adobe Creative Cloud"></yt-video>
 
 
 Simply obtain vocal data to train the model, the more you have, the better and more accurate it will be. Adobe state’s you only need 20 minutes of speech to completely replicate someone’s voice.
@@ -122,7 +122,7 @@ The result is a very convincing video of the President of the United States doin
 
 We spoke of the impressionist who takes a character and breaks them down, their temperament, their political stances, their mannerism, their being and creates a convincing analog.
 
-<yt-video vid="PdeydBbS0GE"></yt-video>
+<yt-video vid="PdeydBbS0GE" title="An old friend once told me something that g.. - Westworld quote S01E10 Dr. Robert Ford"></yt-video>
  
 
 > Mozart, Beethoven and Chopin never died, they simply became music.

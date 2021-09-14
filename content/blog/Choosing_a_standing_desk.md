@@ -3,6 +3,7 @@ title: How To Choose The Best Standing Desk
 description: How do you choose the best standing desk? Consider these features when choosing a standing desk.
 headerImage: ./posts/img/vps-speed.png
 headerVideoID: wPDv50EDQfA
+headerVideoTitle: 'Choosing The Best Standing Desk 2018 | Uplift 900'
 tags:
   - hardware
 createdAt: 1530936000000

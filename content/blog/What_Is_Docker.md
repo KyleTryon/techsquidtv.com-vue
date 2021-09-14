@@ -3,6 +3,7 @@ title: What Is Docker?
 description: In short, Docker allows you to “containerize” applications and scripts. If you are familiar with virtual machines, it is almost like that except a whole lot more efficient for some use cases.
 headerImage: ./posts/img/vps-speed.png
 headerVideoID: _dfLOzuIg2o
+headerVideoTitle: What is Docker in 5 minutes
 tags:
   - linux
   - docker

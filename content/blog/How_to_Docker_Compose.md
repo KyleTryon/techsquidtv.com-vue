@@ -3,6 +3,7 @@ title: How to install WordPress with Docker-Compose
 description: Docker makes it easy to manage and develop online web applications and Docker-Compose makes it simple to manage multiple Docker containers. With only 2 containers and an incredibly simple configuration file, we can launch our own WordPress installation in under 10 minutes.
 headerImage: ./posts/img/vps-speed.png
 headerVideoID: exmBvjlZr7U
+headerVideoTitle: 'Learn Docker-Compose with WordPress'
 tags:
   - linux
   - docker

@@ -3,6 +3,7 @@ title: Kubernetes in 10 minutes
 description: What is Kubernetes? TechSquidTV breaks down Kubernetes in 10 minutes in this YouTube video.
 headerImage: ./posts/img/vps-speed.png
 headerVideoID: RaM1DFqQOm4
+headerVideoTitle: 'Kubernetes in 10 minutes'
 tags:
   - linux
   - k8s
