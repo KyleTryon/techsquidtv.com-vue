@@ -18,11 +18,7 @@ export default {
   data() {
     return {
       thumbnailURL: "https://i.ytimg.com/vi_webp/" + this.vid + "/maxresdefault.webp",
-    }
-  },
-  computed: {
-    videoURL() {
-      return `https://www.youtube.com/embed/${this.vid}`
+      videoURL: `https://www.youtube.com/embed/${this.vid}`
     }
   }
 }
