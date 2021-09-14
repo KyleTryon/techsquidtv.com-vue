@@ -100,6 +100,8 @@ export default {
 
   image: {
     // Options
+    format: 'webp',
+    quality: 90
   },
 
   googleFonts: {
