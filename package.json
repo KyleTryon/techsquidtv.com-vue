@@ -6,8 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "analyze": "nuxt generate",
-    "generate": "nuxt build --analyze",
+    "analyze": "nuxt generate --analyze",
+    "generate": "nuxt generate",
     "prepare": "husky install",
     "test": "jest"
   },
