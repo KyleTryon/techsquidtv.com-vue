@@ -132,8 +132,19 @@ Admittedly, this screen shot was taken after a small optimization pass where I e
 
 <nuxt-picture src="./posts/img/nuxt-v-wordpress-speed.jpg" alt="Speed comparison old WordPress Website vs. new Nuxt site" fit="contain" alt="wordpress vs nuxt speed comparison"></nuxt-picture>
 
-Post-launch, maybe by the time you are reading this, I plan to get all of these in the high 90's without sacrificing any of the experience. As it turns out, most of the issues pretty much all stem from loading YouTube thumbnails.
+With minimal effort from there an a little direction from the reports, I couldn't resist taking one more pass before publishing
+
+<nuxt-picture src="./posts/img/nuxt_performance.jpg" alt="Improved Nuxt performance" fit="contain" alt="wordpress vs nuxt speed comparison"></nuxt-picture>
 
 NuxtJS has been a great choice for me for building the custom experience I want for my blog and will make it easy to tweak and update in the future. There's going to be many more blog posts about how this blog was built and the many changes, optimizations, and improvements that are yet to come.
+
+There were some concerns when migrating from WordPress, but for most roadblocks, alternatives provided an adequate solution. Netlify's [form handling](https://www.netlify.com/docs/form-handling/) is perfect for my email contact form, and I am highly interested in how I can use their [serverless functions](https://www.netlify.com/docs/serverless-functions/).
+
+For comments, my other biggest draw to WordPress, I ended up finding a solution that was absolutely perfect for my developer-focused audience and open source website. [Giscus](https://giscus.app/) is a comment system powered by GitHub's new [Discussions API](https://developer.github.com/v3/discussions/). User's can comment on any post with their GitHub account and the comments are loaded from a synced GitHub Discussion. Try it out here and leave a comment below!
+
+Nuxt might not be the best out-of-the-box choice for a blog or static site, but it has immense flexibility with just enough magic boilerplate to get the job done. If you are looking for something you can fully customize and run on a budget, for Vue and JavaScript developers, you can do no wrong in choosing Nuxt.
+
+Like I mentioned, this website is open source, so follow along on the git repository to watch the progress.
+[GitHub Repository](https://github.com/KyleTryon/techsquidtv.com)
 
 Be sure to join **_The Full Stack_** newsletter below to keep up with this project and other excellent content for developers around the web.
