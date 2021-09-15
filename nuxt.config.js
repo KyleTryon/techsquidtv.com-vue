@@ -19,7 +19,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Blog posts and videos for developers on topics such as Docker, TypeScript, Hardware and Development.',
+        content: 'Developer Content Creator - Learn Docker, TypeScript, Hardware and Development.',
       },
       { name: 'format-detection', content: 'telephone=no' },
       { property: "og:site_name", content: "TechSquidTV Blog" },
@@ -28,7 +28,7 @@ export default {
       {
         hid: "og:description",
         property: "og:description",
-        content: "Blog posts and videos for developers on topics such as Docker, TypeScript, Hardware and Development.",
+        content: "Developer Content Creator - Learn Docker, TypeScript, Hardware and Development.",
       },
       { property: "og:image:width", content: "1080" },
       { property: "og:image:height", content: "1080" },

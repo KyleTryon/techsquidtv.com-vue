@@ -244,12 +244,12 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.article.image,
+          content: this.article.headerImage,
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.article.image,
+          content: this.article.headerImage,
         },
         {
           property: 'article:published_time',

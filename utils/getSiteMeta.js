@@ -2,8 +2,8 @@ const type = "website";
 const url = "https://techsquidtv.com";
 const title = "TechSquidTV - Developer Content Creator Blog";
 const description =
-  "Blog posts and videos for developers on topics such as Docker, TypeScript, Hardware and Development..";
-const mainImage = "/img/tstv-blog-background-og.png";
+  "Developer Content Creator - Learn about Docker, TypeScript, Hardware and Development.";
+const mainImage = "img/tstv-blog-background-og.png";
 export default (meta) => {
   return [
     {
