@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col-reverse md:flex-row py-4 border-t border-b">
     <div class="px-2 flex flex-col justify-center flex-1">
-      <h1 class="text-3xl">{{post.title}}</h1>
+      <h2 class="text-3xl">{{post.title}}</h2>
       <p>{{post.description}}</p>
       <div >
         <read-time :readingTime="post.readingTime" class="py-1" />

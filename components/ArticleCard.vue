@@ -10,7 +10,7 @@
           <read-time :readingTime="readingTime" class="py-1" />
           <published-at :created="createdAt" :updated="updatedAt" class="py-1" />
         </div>
-        <h1 class="text-4xl">{{ title }}</h1>
+        <h2 class="text-4xl">{{ title }}</h2>
         <p>{{ description }}</p>
       </summary>
     </article>
