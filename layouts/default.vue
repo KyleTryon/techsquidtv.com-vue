@@ -12,6 +12,6 @@
 
 <style>
 footer a {
-  @apply text-purple-500
+  @apply text-purple-700
 }
 </style>
