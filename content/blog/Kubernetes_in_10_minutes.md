@@ -36,7 +36,7 @@ There’s also a bunch of other great features such as rolling deployments, and 
 
 Kubernetes is a platform made of many micro-services that work together to create and manage the cluster of machines that will soon run our application.
 
-<nuxt-picture src="./posts/img/k8-cluster-v.png"></nuxt-picture>
+<nuxt-picture src="./posts/img/k8-cluster-v.png" alt="k8 cluster"></nuxt-picture>
 
 ### Master Node and the API service
 The main service of the platform is the Kubernetes API, with which each node in the cluster will communicate with.
@@ -45,7 +45,7 @@ The main service of the platform is the Kubernetes API, with which each node in 
 
 This API is also how we as administrators will interact with the cluster and issue command and deployments, etc. However, we don’t usually deal with the API directly (but we could), we usually use a CLI tool called “kubectl”.
 
-<nuxt-picture src="./posts/img/kubectl-version.png" fit="contain"></nuxt-picture>
+<nuxt-picture src="./posts/img/kubectl-version.png" fit="contain" alt="kubectl version"></nuxt-picture>
 
 If you are familiar with Docker, this should be familiar. Docker also operates in a Client-Server relationship using APIs.
 
@@ -63,7 +63,7 @@ While the API service manages and maintains the worker nodes, the worker nodes a
 
 We mentioned above that worker nodes ultimately run our containerized applications, they do so by creating and maintaining “pods”. Pods are the smallest deployable unit in Kubernetes and their lifecycle is handled by the node on which it is running.
 
-<nuxt-picture src="./posts/img/k8pods.jpg" fit="contain"></nuxt-picture>
+<nuxt-picture src="./posts/img/k8pods.jpg" fit="contain" alt="k8s pod"></nuxt-picture>
 
 In Kubernetes we don’t interact with Docker directly, everything we deal with is purely Kubernetes API and the Docker stuff happens behind the scenes. Pods also manage their own networking and any attached volumes individually.
 

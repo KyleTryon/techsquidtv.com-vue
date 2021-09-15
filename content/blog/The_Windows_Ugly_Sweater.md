@@ -39,7 +39,7 @@ Well, Microsoft is unfortunately not selling these sweaters. It was rumored that
 
 Not much longer after this tweet I received a DM.
 
-<nuxt-picture src="./posts/img/Windows-lucky-day.jpg"></nuxt-picture>
+<nuxt-picture src="./posts/img/Windows-lucky-day.jpg" alt="Twitter DM from microsoft"></nuxt-picture>
 
 Not long after I received my prized swag 😍
 
@@ -49,7 +49,7 @@ The form appears closed now, I think it is safe to assume that the 2019 Windows 
 
 That doesn’t mean it’s impossible to obtain one of your own. It seems some of the giftees have already listed their rare swag on [Ebay](https://rover.ebay.com/rover/1/711-53200-19255-0/1?ff3=4&pub=5575501551&toolid=10001&campid=5338530720&customid=WindowsUglySweater&mpre=https%3A%2F%2Fwww.ebay.com%2Fsch%2Fi.html%3F_from%3DR40%26_trksid%3Dm570.l1313%26_nkw%3Dwindows%2Bugly%2Bsweater%26_sacat%3D0).
 
-<nuxt-picture src="./posts/img/ebay-windows-sweater.jpg"></nuxt-picture>
+<nuxt-picture src="./posts/img/ebay-windows-sweater.jpg" alt="Ebay Windows Ugly Christmas Sweater"></nuxt-picture>
 
 I think I will be keeping mine however.
 

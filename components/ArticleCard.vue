@@ -3,7 +3,7 @@
     <article class="card h-full">
       <div class="cardHeader">
         <yt-video v-if="video" :vid="video" :title="vtitle"></yt-video>
-        <nuxt-picture v-else :src="image" fit="cover" height="600px" loading="lazy" />
+        <nuxt-picture v-else :src="image" fit="cover" :alt="title" height="600px" loading="lazy" />
       </div>
       <summary class="p-4">
         <div class="text-xs flex flex-row justify-between">

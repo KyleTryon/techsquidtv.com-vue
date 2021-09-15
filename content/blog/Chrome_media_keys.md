@@ -18,7 +18,7 @@ A little Googling and it was easy to find [the culprit](https://developer.chrome
 1. Check your currently installed apps and extensions here: [chrome://apps/](chrome://apps/) and [chrome://extensions/](chrome://extensions/)
 2. Check for media apps, music players, things like [Google Play Music](https://chrome.google.com/webstore/detail/google-play-music/fahmaaghhglfmonjliepjlchgpgfmobi/related) and Plex and disable them.
 
-<nuxt-picture src="./posts/img/Play-Music-Extension.jpg" width="500px" fit="contain"></nuxt-picture>
+<nuxt-picture src="./posts/img/Play-Music-Extension.jpg" width="500px" fit="contain" alt="google play music extension"></nuxt-picture>
 
 **You’re done!**
 
@@ -72,4 +72,4 @@ You can test that yourself to see that these media keys are in fact being access
 
 I think it’s interesting this global behavior isn’t listed as a type of permission accessible to the Chrome extension. That might potentially be worth noting depending on who you ask.
 
-<nuxt-picture src="./posts/img/Google-Play-Music-Permissions.jpg" fit="contain"></nuxt-picture>
+<nuxt-picture src="./posts/img/Google-Play-Music-Permissions.jpg" fit="contain" alt="play music permissions"></nuxt-picture>

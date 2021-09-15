@@ -37,12 +37,12 @@ But for the sake of argument and awareness, let's take a quick look at Plex some
 ### 1. Emby
 The biggest competitor to Plex is also open source. Emby also has its own premium subscription that is on par price-wise as Plex. Though, some of the features such as access to podcasts or the ability to stream to a TV, are features that are free on Plex already.
 
-<nuxt-picture src="./posts/img/emby.png" fit="contain"></nuxt-picture>
+<nuxt-picture src="./posts/img/emby.png" fit="contain" alt="emby screenshot"></nuxt-picture>
 
 ### 2. Jellyfin
 Being that Emby was one fully open source, some developers created a fork of Emby some time ago to include the premium features that were previously locked behind Emby's premium service🤷‍♂️. Development is still active on this project and it offers features that the free versions of Emby and Plex do not offer, such as Live TV DVR. However, Jellyfin as well as Emby (which Jellyfin is based on) share a lot of common complaints with bugs in the app to plain sluggishness. Jellyfin is something I plan on testing soon however, and maybe you should too!
 
-<nuxt-picture src="./posts/img/jellyfin.png" fit="contain"></nuxt-picture>
+<nuxt-picture src="./posts/img/jellyfin.png" fit="contain" alt="jellyfin screenshot"></nuxt-picture>
 
 These are truly the only competition in existence. Some may try to honorable mention Kodi, but Kodi is not a media server. Kodi is a media center, just not a media server. Kodi works well to display local media but was not designed to allow you to watch that media anywhere. This might be ok for your living room couch, but you are going to go through the trouble anyway, why not get the ability to stream?
 
@@ -83,7 +83,7 @@ We cover this well in our video above. To get started check for the drive you wa
 df -h
 ```
 
-<nuxt-picture src="./posts/img/df-utility.jpg" fit="contain"></nuxt-picture>
+<nuxt-picture src="./posts/img/df-utility.jpg" fit="contain" alt="df utility"></nuxt-picture>
 
 You can find your drive usually by the size given you don't have two new similarly sized drives. You can see on the right if it is already mounted to a directory.
 
@@ -127,7 +127,7 @@ Plex will bring you through a few simple walkthrough steps to sign you into your
 
 The setup wizard is fairly simple but you can follow [Plex's guide here](https://support.plex.tv/articles/200288896-basic-setup-wizard/) for more pictures.
 
-<nuxt-picture src="./posts/img/plex-setup.jpg" fit="contain"></nuxt-picture>
+<nuxt-picture src="./posts/img/plex-setup.jpg" fit="contain" alt="plex setup screen"></nuxt-picture>
 
 ## Now sit back and relax.
 

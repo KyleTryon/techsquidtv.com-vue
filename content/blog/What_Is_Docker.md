@@ -14,7 +14,7 @@ If you read the blog, watch our channel or just play with Linux you have seen th
 
 ## What Is A Container?
 
-<nuxt-picture src="./posts/img/Docker-Container-ship.jpg"></nuxt-picture>
+<nuxt-picture src="./posts/img/Docker-Container-ship.jpg" alt="Docker Container Ship"></nuxt-picture>
 
 In short, Docker allows you to “containerize” applications and scripts. If you are familiar with virtual machines, it is almost like that except a whole lot more efficient for some use cases. What’s great about this is if you needed two applications running that each requires a different version of Ruby (or anything else), each app can live in its own container with the dependency versions it requires. Normally on a single host, you’d have a conflict where you’d need two versions of a dependency the system on your host machine at once, which not only can cause compatibility issues but it also gunks up the main operating system. If you damage your main OS, you’ll have some big headaches down the road. Containers can run independently of each other but also communicate over the network, so it’s very common for instance to spin up a Docker container that runs a database like MySQL and another container running a CMS like WordPress (oh hey, we do that). Containers can easily be added or removed and you can rest easy knowing you won’t negatively affect any neighbors or the host. Keeping your host image clean is really satisfying.
 
@@ -38,7 +38,7 @@ So what’s the difference? Why not just use a virtual machine? Well, Docker con
 
 I’m stealing these images from Docker’s official website here: https://www.docker.com/what-container#/package_software
 
-<nuxt-picture src="./posts/img/container-what-is-container.png"></nuxt-picture>
+<nuxt-picture src="./posts/img/container-what-is-container.png" alt="What is a container?"></nuxt-picture>
 
 Here is the cool thing about Docker. Assuming you need all Linux based operating systems and tools, what Docker is amazing at doing is sharing resources rather than duplicating them. Docker runs natively on Linux, sharing the kernel of the host machine with other Linux based containers, where a virtual machine must introduce a hypervisor which speaks between the Host OS and the virtual OS.
 

@@ -25,7 +25,7 @@ You have a few different options, **Adjustable Height Desk Conversion Kits**, **
 
 ## Adjustable Height Desk Conversion Kits
 
-<nuxt-picture src="./posts/img/desk-riser.jpg"></nuxt-picture>
+<nuxt-picture src="./posts/img/desk-riser.jpg" alt="desk riser"></nuxt-picture>
 
 Here’s a few options on Amazon and their current price.
 

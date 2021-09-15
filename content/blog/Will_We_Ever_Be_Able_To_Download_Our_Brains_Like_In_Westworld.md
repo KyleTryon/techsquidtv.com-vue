@@ -22,7 +22,7 @@ It is later revealed that the true reason for the park’s existence is for data
 
 This is similar to how [Google’s captcha system](https://www.techradar.com/news/captcha-if-you-can-how-youve-been-training-ai-for-years-without-realising-it) was actually less about finding out if you are a robot or not, and really an excuse to use nearly every person on the internet to train an AI to be able to identify road signs, house numbers, and cat’s faces to help build its camera AI and Google maps system.
 
-<nuxt-picture src="./posts/img/CAPTCHA.jpg" fit="contain"></nuxt-picture>
+<nuxt-picture src="./posts/img/CAPTCHA.jpg" fit="contain" alt="Captcha example"></nuxt-picture>
 
 
 The park gives them a way to study an individual’s unfiltered behavior in a variety of controlled and scripted situations over years of recurring visitation. Information that could potentially be used to aid in creating a reliable “clone” of someone.

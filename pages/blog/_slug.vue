@@ -11,7 +11,7 @@
           v-else
           :src="article.headerImage"
           class="headerImage"
-          alt=""
+          :alt="article.title"
         ></nuxt-picture>
       </div>
       <div class="grid-item lg:tocArea-lg mx-auto">

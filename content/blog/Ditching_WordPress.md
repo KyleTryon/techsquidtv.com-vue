@@ -16,7 +16,7 @@ I think I've found the perfect solution for me, and I expect we'll be using the 
 
 The original [TechSquidTV website](https://techsquidtv.com) website was thrown together in mid 2018, around the time I started my YouTube "career" and decided to get more serious about pursing code and development as a career after years of hobby interest. I wanted a place to most share my content in a way that Google could easily find and index it, hopefully promoting my video content through my blog to more search results. The objective was to be quick and get something online that looked good and was ready to work.
 
-<nuxt-picture src="./posts/img/old_tstv_website.png" fit="contain"></nuxt-picture>
+<nuxt-picture src="./posts/img/old_tstv_website.png" fit="contain" alt="original techsquidtv website"></nuxt-picture>
 
 ## Why I Chose WordPress In The First Place
 
@@ -59,7 +59,7 @@ One option is to look into static-site generation. The low (essentially zero) te
 
 The biggest issue that really dove me to breakup with WordPress was not the $12/month cost, but the lack of reliability that often left my website offline. Now, some smarter deployment or managed hosting could have resolved this but because of some sort of "leak", the server would crash periodically hit 100% CPU and the site would be unavailable.
 
-<nuxt-picture src="./posts/img/vultr-cpu-leak.jpg"></nuxt-picture>
+<nuxt-picture src="./posts/img/vultr-cpu-leak.jpg" alt="cpu max load"></nuxt-picture>
 
 This blog used to be hosted on a VPS using Docker-Compose on a single node server with both the WordPress installation and a database. What would happen, is after several days or weeks of being online, I would come to find my site was offline. When logging into the VPS panel I could see CPU usage had been steadily creeping up and its likely why the docker containers were crashing, though I never bothered to see what kept them from recovering.
 
@@ -130,7 +130,7 @@ Netlify has too many free benefits to fit into this article, but with no downsid
 
 Admittedly, this screen shot was taken after a small optimization pass where I enabled lazy-loading of images and videos. So while not quite my _first_ pass, with little effort we have at minimum matched and in some ways exceeded the performance of the premium WordPress theme.
 
-<nuxt-picture src="./posts/img/nuxt-v-wordpress-speed.jpg" alt="Speed comparison old WordPress Website vs. new Nuxt site" fit="contain"></nuxt-picture>
+<nuxt-picture src="./posts/img/nuxt-v-wordpress-speed.jpg" alt="Speed comparison old WordPress Website vs. new Nuxt site" fit="contain" alt="wordpress vs nuxt speed comparison"></nuxt-picture>
 
 Post-launch, maybe by the time you are reading this, I plan to get all of these in the high 90's without sacrificing any of the experience. As it turns out, most of the issues pretty much all stem from loading YouTube thumbnails.
 
