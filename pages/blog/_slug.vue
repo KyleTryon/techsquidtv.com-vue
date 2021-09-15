@@ -157,6 +157,7 @@ article h4 {
 <script>
 import SocialShareBar from '~/components/SocialShareBar.vue'
 import YtVideo from '~/components/YtVideo.vue'
+const getSiteMeta = require('~/utils/getSiteMeta')
 export default {
   components: { SocialShareBar, YtVideo },
   data() {
@@ -201,56 +202,7 @@ export default {
     return {
       title: `${this.article.title}`,
       meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.article.description,
-        },
-        {
-          hid: 'og:title',
-          name: 'og:title',
-          content: this.article.title,
-        },
-        {
-          hid: 'og:description',
-          name: 'og:description',
-          content: this.article.description,
-        },
-        {
-          hid: 'og:type',
-          property: 'og:type',
-          content: 'article',
-        },
-        {
-          hid: 'og:url',
-          property: 'og:url',
-          content: `https://techsquidtv.com/blog/${this.$route.params.slug}`,
-        },
-        {
-          hid: 'twitter:url',
-          name: 'twitter:url',
-          content: `https://techsquidtv.com/blog/${this.$route.params.slug}`,
-        },
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: this.article.title,
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: this.article.description,
-        },
-        {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: this.article.headerImage,
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: this.article.headerImage,
-        },
+        ...this.meta,
         {
           property: 'article:published_time',
           content: this.article.createdAt,
@@ -264,7 +216,7 @@ export default {
           content: this.article.tags ? this.article.tags.toString() : '',
         },
         { name: 'twitter:label1', content: 'Written by' },
-        { name: 'twitter:data1', content: 'Kyle Tryon (TechSquidTV)' },
+        { name: 'twitter:data1', content: 'TechSquidTV' },
         { name: 'twitter:label2', content: 'Filed under' },
         {
           name: 'twitter:data2',
