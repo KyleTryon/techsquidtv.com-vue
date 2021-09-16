@@ -24,7 +24,7 @@
 export default {
   props: ['vid', 'title'],
   async fetch() {
-    await this.getThumbnailURL()
+    this.thumbnailURL = await this.getThumbnailURL()
   },
   methods: {
     async getThumbnailURL() {
@@ -32,16 +32,16 @@ export default {
       const WEBP_URL = `https://i.ytimg.com/vi_webp/${this.vid}/maxresdefault.webp`
       let response = await fetch(WEBP_URL)
       if (response.ok) {
-        this.thumbnailURL = WEBP_URL
+        return WEBP_URL
       } else {
-        this.thumbnailURL = JPG_URL
+        return JPG_URL
       }
     },
-    data() {
-      return {
-        thumbnailURL: `https://img.youtube.com/vi/${this.vid}/maxresdefault.jpg`,
-      }
-    },
+  },
+  data() {
+    return {
+      thumbnailURL: '',
+    }
   },
 }
 </script>

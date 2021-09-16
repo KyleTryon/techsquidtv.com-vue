@@ -157,7 +157,7 @@ article h4 {
 <script>
 import SocialShareBar from '~/components/SocialShareBar.vue'
 import YtVideo from '~/components/YtVideo.vue'
-const getSiteMeta = require('~/utils/getSiteMeta')
+import getSiteMeta from '~/utils/getSiteMeta'
 export default {
   components: { SocialShareBar, YtVideo },
   data() {
