@@ -157,7 +157,7 @@ article h4 {
 <script>
 import SocialShareBar from '~/components/SocialShareBar.vue'
 import YtVideo from '~/components/YtVideo.vue'
-import getSiteMeta from '~/utils/getSiteMeta'
+import {getSiteMeta, baseURL} from '~/utils/getSiteMeta'
 export default {
   components: { SocialShareBar, YtVideo },
   data() {
@@ -238,7 +238,7 @@ export default {
         type: 'article',
         title: this.article.title,
         description: this.article.description,
-        url: `${process.env.BASE_URL}/blog/${this.$route.params.slug}`,
+        url: `${baseURL}/blog/${this.$route.params.slug}`,
         mainImage: this.article.headerImage,
       }
       return getSiteMeta(metaData)

@@ -1,4 +1,4 @@
-import getSiteMeta from "./utils/getSiteMeta";
+import{getSiteMeta} from "./utils/getSiteMeta";
 const meta = getSiteMeta();
 
 export default {

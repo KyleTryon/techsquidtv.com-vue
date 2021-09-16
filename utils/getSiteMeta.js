@@ -4,7 +4,8 @@ const title = "TechSquidTV - Developer Content Creator Blog";
 const description =
   "Developer Content Creator - Learn about Docker, TypeScript, Hardware and Development.";
 const mainImage = "/img/tstv-blog-background-og.png";
-export default (meta) => {
+const baseURL = "https://techsquidtv.netlify.app"
+function getSiteMeta(meta) {
   return [
     {
       hid: "description",
@@ -34,7 +35,7 @@ export default (meta) => {
     {
       hid: "og:image",
       property: "og:image",
-      content: process.env.BASE_URL + (meta && meta.mainImage) || process.env.BASE_URL + mainImage,
+      content: (meta && (baseURL + meta.mainImage)) || baseURL + mainImage,
     },
     {
       hid: "twitter:url",
@@ -54,7 +55,8 @@ export default (meta) => {
     {
       hid: "twitter:image",
       name: "twitter:image",
-      content: process.env.BASE_URL + (meta && meta.mainImage) || process.env.BASE_URL + mainImage,
+      content: (meta && (baseURL + meta.mainImage)) || baseURL + mainImage,
     },
   ];
 };
+module.exports = { getSiteMeta, baseURL };
