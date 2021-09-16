@@ -1,7 +1,7 @@
 ---
 title: Making Your Own Home Media Server With Plex And Docker-Compose
 description: Become the ultimate cord cutter and make your own Netflix-like service at home with an old computer and Plex.
-headerImage: ./posts/img/Plex-Server.png
+headerImage: /posts/img/Plex-Server.png
 tags:
   - linux
   - docker
@@ -14,9 +14,9 @@ I have been a user of Plex Media Server for the past 3 years and I haven't looke
 
 ## What You Need
 
-* A computer to act as our server
-* Hard drives for storage. Internal or USB is fine.
-* A Flash Drive
+- A computer to act as our server
+- Hard drives for storage. Internal or USB is fine.
+- A Flash Drive
 
 If you are familiar with Plex, you can skip down below where we get started with the install. If you are new to home media servers, take a chance to see quickly why we are choosing Plex.
 
@@ -35,11 +35,13 @@ But for the sake of argument and awareness, let's take a quick look at Plex some
 ## Plex Alternatives
 
 ### 1. Emby
+
 The biggest competitor to Plex is also open source. Emby also has its own premium subscription that is on par price-wise as Plex. Though, some of the features such as access to podcasts or the ability to stream to a TV, are features that are free on Plex already.
 
 <nuxt-picture src="./posts/img/emby.png" fit="contain" alt="emby screenshot"></nuxt-picture>
 
 ### 2. Jellyfin
+
 Being that Emby was one fully open source, some developers created a fork of Emby some time ago to include the premium features that were previously locked behind Emby's premium service🤷‍♂️. Development is still active on this project and it offers features that the free versions of Emby and Plex do not offer, such as Live TV DVR. However, Jellyfin as well as Emby (which Jellyfin is based on) share a lot of common complaints with bugs in the app to plain sluggishness. Jellyfin is something I plan on testing soon however, and maybe you should too!
 
 <nuxt-picture src="./posts/img/jellyfin.png" fit="contain" alt="jellyfin screenshot"></nuxt-picture>
@@ -51,6 +53,7 @@ These are truly the only competition in existence. Some may try to honorable men
 As mentioned in the title we are going to be using Docker as well as Docker compose on a Linux based server environment. This will allow us to run not only Plex, but most any software we want in an easily managed and scriptable environment. I will be using Ubuntu 18.04 as my base OS, you can use any OS you want although this tutorial will focus on Debian based OS.
 
 ### 1. Install the Operating System
+
 Begin by installing your selected Linux OS to the machine. You can use a utility like Etcher to burn the ISO file to a flash drive as bootable media.
 
 From there, once the Flash drive is loaded with Linux, load it into the server computer and boot while smashing the F8 key. The BIOS interrupt is often F8 but may be different for your machine. Check the BIOS splash screen for on-screen directions to find the key you need to hit.
@@ -58,10 +61,11 @@ From there, once the Flash drive is loaded with Linux, load it into the server c
 Install your operating system to the correct drive. You should ideally have a separate storage device from your media content for the OS. In the video above we use a Solid State drive as our OS. You could even keep the OS on the flash drive if you have to, though this may affect performance.
 
 ### 2. Install Docker
+
 For our Ubuntu installation for Docker Community Edition, we can follow the official Docker documentation for installing DockerCE. You can also follow along with our recording below, check it out you can actually copy and paste the commands from the video!
 
-
 ### 3. Install Docker-Compose
+
 No video required, only a single line command is needed to install Docker-Compose.
 
 ```shell
@@ -75,6 +79,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 ### 5. How to mount your media drives
+
 Where do you plan on keeping all those TV shows and movies? Not on the same drive as your operating system I hope?
 
 We cover this well in our video above. To get started check for the drive you want to mount by using the df utility and the -h human-readable flag.
@@ -92,6 +97,7 @@ If not, you'll need to create a directory and mount the drive to that directory.
 ### 1. Create a directory where you will access the data.
 
 ### 4. Write your Docker-Compose.yml file
+
 We've already made a video and a blog post about the specifics of Docker-Compose if you are looking for an in-depth Docker-Compose tutorial.
 
 <yt-video vid="exmBvjlZr7U" title="Learn Docker-Compose with WordPress"></yt-video>
@@ -109,6 +115,7 @@ The PUID and PGID settings allow you to change what user the container runs on u
 Once finished, save this file to docker-compose.yml in a convenient location on your server.
 
 ## Start Plex!
+
 You're ready to rock with your own media server. It's time to flip the switch. Run the following command in the same directory as your newly created docker-compose.yml file.
 
 ```
@@ -132,4 +139,3 @@ The setup wizard is fairly simple but you can follow [Plex's guide here](https:/
 ## Now sit back and relax.
 
 Once your Plex server is up and running you just need to fill up your drives with content. How you do that is up to you but however you do it, it's probably illegal in one way or another.
-

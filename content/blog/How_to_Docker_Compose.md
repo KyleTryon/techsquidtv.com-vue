@@ -1,7 +1,7 @@
 ---
 title: How to install WordPress with Docker-Compose
 description: Docker makes it easy to manage and develop online web applications and Docker-Compose makes it simple to manage multiple Docker containers. With only 2 containers and an incredibly simple configuration file, we can launch our own WordPress installation in under 10 minutes.
-headerImage: ./posts/img/vps-speed.png
+headerImage: /posts/img/vps-speed.png
 headerVideoID: exmBvjlZr7U
 headerVideoTitle: 'Learn Docker-Compose with WordPress'
 tags:
@@ -35,35 +35,35 @@ A docker-compose file for WordPress only requires two containers, the WordPress 
 ```yaml
 version: '3'
 services:
-   wordpress:
-     depends_on:
-       - db
-     image: wordpress:latest
-     volumes:
-       - wp_data:/var/www/html
-     ports:
-       - "80:80"
-     restart_policy:
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    volumes:
+      - wp_data:/var/www/html
+    ports:
+      - '80:80'
+    restart_policy:
       condition: on-failure
-     environment:
-       WORDPRESS_DB_HOST: db:3306
-       WORDPRESS_DB_USER: wordpress
-       WORDPRESS_DB_PASSWORD: my_wordpress_db_password
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: my_wordpress_db_password
 
-   db:
-     image: mariadb
-     volumes:
-       - db_data:/var/lib/mysql
-     restart_policy:
+  db:
+    image: mariadb
+    volumes:
+      - db_data:/var/lib/mysql
+    restart_policy:
       condition: on-failure
-     environment:
-       MYSQL_ROOT_PASSWORD: my_db_root_password
-       MYSQL_DATABASE: wordpress
-       MYSQL_USER: wordpress
-       MYSQL_PASSWORD: my_wordpress_db_password
+    environment:
+      MYSQL_ROOT_PASSWORD: my_db_root_password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: my_wordpress_db_password
 volumes:
-    wp_data:
-    db_data:
+  wp_data:
+  db_data:
 ```
 
 Save the file as `docker-compose.yml`. To learn more about creating your own Docker-Compose files, watch the video above.
@@ -73,10 +73,13 @@ Save the file as `docker-compose.yml`. To learn more about creating your own Doc
 You can follow these directions directly from Docker’s own documentation: [https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
 
 1. Update the system with:
+
 ```shell
 sudo apt-get update
 ```
+
 2. Install required packages to allow apt to install repositories over HTTPS:
+
 ```shell
 sudo apt-get install \
     apt-transport-https \
@@ -84,22 +87,30 @@ sudo apt-get install \
     curl \
     software-properties-common
 ```
+
 3. Add Docker’s official GPG key:
+
 ```shell
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
+
 4. Add the stable branch repo to your mirrors list:
+
 ```shell
 sudo add-apt-repository \
   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) \
   stable"
 ```
+
 5. Update again now that Docker has been added:
+
 ```shell
 sudo apt-get update
 ```
+
 6. Finally, install Docker-Ce:
+
 ```shell
 sudo apt-get install docker-ce
 ```
@@ -109,14 +120,19 @@ sudo apt-get install docker-ce
 Once Docker has been installed, install Docker-Compose. You can also follow this guide on the official docs: [https://docs.docker.com/compose/install/#install-compose](https://docs.docker.com/compose/install/#install-compose)
 
 1. Download the latest version of Docker-compose:
+
 ```shell
 sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
+
 2. Ensure the binary has permission to be executed:
+
 ```shell
 sudo chmod +x /usr/local/bin/docker-compose
 ```
+
 3. Verify by checking the version:
+
 ```shell
 docker-compose --version
 ```
@@ -127,6 +143,7 @@ Once your server has Docker and Docker-Compose installed, we can launch our Word
 
 1. Move the `docker-compose.yml` file onto your sever in a location that makes sense for you (ex: `~/wordpress/docker-compose.yml`).
 2. From the `~/wordpress` directory run:
+
 ```shell
 docker-compose up -d
 ```

@@ -238,8 +238,8 @@ export default {
         type: 'article',
         title: this.article.title,
         description: this.article.description,
-        url: `${this.$config.baseUrl}/blog/${this.$route.params.slug}`,
-        mainImage: this.article.image,
+        url: `${process.env.BASE_URL}/blog/${this.$route.params.slug}`,
+        mainImage: this.article.headerImage,
       }
       return getSiteMeta(metaData)
     },

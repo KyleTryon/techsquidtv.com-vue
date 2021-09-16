@@ -1,7 +1,7 @@
 ---
 title: Synology’s DS920+ is a NAS powerhouse
 description: Should you buy the long awaited Synology SD920+ NAS? We take a look and review the specs and features.
-headerImage: ./posts/img/vps-speed.png
+headerImage: /posts/img/vps-speed.png
 headerVideoID: RyWMjyqVXkY
 headerVideoTitle: 'Synology DS920+ | What is RAID 5'
 tags:
@@ -11,11 +11,12 @@ createdAt: 1597464000000
 
 The Synology DiskStation DS920+ is here, the latest refresh in the DS9 line of Network Attached Storage devices from Synology. The last iteration to come to use was back in 2018 with the DS918+.
 
-Synology is one of the most recognizable manufactures of commercial “NAS” machines. For the uninitiated, a NAS  (Network Attached Storage) is nothing more than a computer with some hard drives in it, for the explicit purpose of backing up data over the network. This is typically done using “RAID” a storage technology that allows us to treat many physical hard drives as a single virtual disk.
+Synology is one of the most recognizable manufactures of commercial “NAS” machines. For the uninitiated, a NAS (Network Attached Storage) is nothing more than a computer with some hard drives in it, for the explicit purpose of backing up data over the network. This is typically done using “RAID” a storage technology that allows us to treat many physical hard drives as a single virtual disk.
 
 Behind the scenes, RAID can make use of these physical drives in a number of configurations that balance between total storage capacity, speed, and redundancy. This both protects your data and may even allow you to access it faster.
 
 # Specs:
+
 - **CPU:** Intel Celeron J4125 4-core 2.0 (base) / 2.7 (burst) GHz
 - **RAM:** 4 GB DDR4 (Expandable to 8GB)
 - **Drive Bays:** 4

@@ -34,7 +34,7 @@ export default (meta) => {
     {
       hid: "og:image",
       property: "og:image",
-      content: (meta && meta.mainImage) || mainImage,
+      content: process.env.BASE_URL + (meta && meta.mainImage) || process.env.BASE_URL + mainImage,
     },
     {
       hid: "twitter:url",
@@ -54,7 +54,7 @@ export default (meta) => {
     {
       hid: "twitter:image",
       name: "twitter:image",
-      content: (meta && meta.mainImage) || mainImage,
+      content: process.env.BASE_URL + (meta && meta.mainImage) || process.env.BASE_URL + mainImage,
     },
   ];
 };

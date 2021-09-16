@@ -1,7 +1,7 @@
 ---
 title: Keyboard Media Keys Not Working? It’s Chrome’s Fault
 description: Ever noticed you haven't been able to use your keyboard's media keys to play and pause music while chrome is open? Let's see why.
-headerImage: ./posts/img/audio-issues.jpg
+headerImage: /posts/img/audio-issues.jpg
 tags:
   - chrome
 createdAt: 1550707200000

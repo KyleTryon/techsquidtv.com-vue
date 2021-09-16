@@ -1,7 +1,7 @@
 ---
 title: What Is Docker?
 description: In short, Docker allows you to “containerize” applications and scripts. If you are familiar with virtual machines, it is almost like that except a whole lot more efficient for some use cases.
-headerImage: ./posts/img/vps-speed.png
+headerImage: /posts/img/vps-speed.png
 headerVideoID: _dfLOzuIg2o
 headerVideoTitle: What is Docker in 5 minutes
 tags:
@@ -68,6 +68,5 @@ This post is not sponsored by anyone in any way, I have not had any contact with
 I would recommend not using Windows for playing with Docker. Mac will work but Linux is best. If you have access to a virtual machine or any other linux box, that will be the best experience.
 
 I have not actually used this yet as it is normally at capacity and I do have a linux box in the apartment, but there is an online playground for Docker here: [https://labs.play-with-docker.com/#](https://labs.play-with-docker.com/#)
-
 
 Good luck and get containerizing! Leave any questions/feedback/comments in the comment area below!

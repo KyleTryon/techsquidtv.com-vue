@@ -1,7 +1,7 @@
 ---
 title: Kubernetes in 10 minutes
 description: What is Kubernetes? TechSquidTV breaks down Kubernetes in 10 minutes in this YouTube video.
-headerImage: ./posts/img/vps-speed.png
+headerImage: /posts/img/vps-speed.png
 headerVideoID: RaM1DFqQOm4
 headerVideoTitle: 'Kubernetes in 10 minutes'
 tags:
@@ -20,7 +20,7 @@ Or like me, you just work in #devops. One of the most critical tools of DevOps t
 
 “The cloud” is an abstract colloquialism to describe a range of different services, platforms, and ideologies with the goals of storing and serving data on the internet. That could mean your cloud backup provider who is storing your data with Amazon’s AWS S3 or Google’s GCP Cloud storage, or how Netflix serves and delivers its vast content library.
 
-A cloud is a representation of some number of machines (servers, virtual machines, ect) which are communicating together over the internet in cooperation of some task. A slightly more technical term we’ll use from now on is “cluster”.  A cluster, in particular, refers to some group of machines.
+A cloud is a representation of some number of machines (servers, virtual machines, ect) which are communicating together over the internet in cooperation of some task. A slightly more technical term we’ll use from now on is “cluster”. A cluster, in particular, refers to some group of machines.
 
 ## What does Kubernetes do?
 
@@ -39,6 +39,7 @@ Kubernetes is a platform made of many micro-services that work together to creat
 <nuxt-picture src="./posts/img/k8-cluster-v.png" alt="k8 cluster"></nuxt-picture>
 
 ### Master Node and the API service
+
 The main service of the platform is the Kubernetes API, with which each node in the cluster will communicate with.
 
 > The node(s) in the cluster running the API service are typically referred to as “master” nodes, while any other node is referred to as a “worker” node.
@@ -91,10 +92,10 @@ spec:
         app: echoserver
     spec:
       containers:
-      - name: echoserver
-        image: gcr.io/google-samples/node-hello:1.0
-        ports:
-        - containerPort: 80
+        - name: echoserver
+          image: gcr.io/google-samples/node-hello:1.0
+          ports:
+            - containerPort: 80
 ```
 
 The instructions for configuring your cluster will vary slightly depending on the cloud provider you choose.
@@ -127,4 +128,3 @@ Now, if you visit the IP address of any of your nodes at the port specified you 
 🎉
 
 With your service now live on each node, it’s time to place these services behind a load balancer. But, that will be a tutorial for part2!
-

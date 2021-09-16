@@ -1,7 +1,7 @@
 ---
 title: 'The #WindowsUglySweater Is The Only Swag I Care About'
 description: AI an Machine Learning have advanced far enough to give us a glimpse at what's to come in the next few years. Will humans ever be able to "download" their brains?
-headerImage: ./posts/img/vps-speed.png
+headerImage: /posts/img/vps-speed.png
 headerVideoID: 0cdN8EC1wKI
 headerVideoTitle: 'Microsoft made a WindowsXP themed Ugly Holiday Sweater AND I GOT ONE! #WindowsUglySweater (Unboxing)'
 tags:
@@ -19,7 +19,6 @@ Apparently this is a yearly tradition now starting back in 2018 and I missed the
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">On one hand I know it&#39;s an ad and they got us all talking about Microsoft... but on the other hand I&#39;m wearing it while testing the Mac Pro, so it&#39;s totally balancing everything out (and also this is now the best <a href="https://twitter.com/hashtag/uglysweater?src=hash&amp;ref_src=twsrc%5Etfw">#uglysweater</a> I own) <a href="https://t.co/GeCwkvGtZI">pic.twitter.com/GeCwkvGtZI</a></p>&mdash; Marques Brownlee (@MKBHD) <a href="https://twitter.com/MKBHD/status/1205114919995215873?ref_src=twsrc%5Etfw">December 12, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
 [@TomWarren](https://twitter.com/tomwarren) from The Verge
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Microsoft’s ugly Christmas sweater is Windows XP this year. It even comes in a softwear box 😂 <a href="https://t.co/Oz0lNhryPI">pic.twitter.com/Oz0lNhryPI</a></p>&mdash; Tom Warren (@tomwarren) <a href="https://twitter.com/tomwarren/status/1204782275755495428?ref_src=twsrc%5Etfw">December 11, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -30,10 +29,9 @@ I am not one who gives in to marketing tactics often. I see right through your v
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I dont care about <a href="https://twitter.com/hashtag/BabyYoda?src=hash&amp;ref_src=twsrc%5Etfw">#BabyYoda</a> or what ever <a href="https://twitter.com/NickCannon?ref_src=twsrc%5Etfw">@NickCannon</a> said to boost his career. I don&#39;t want to hear about any of that. IMMUNE I tell you.<a href="https://twitter.com/Microsoft?ref_src=twsrc%5Etfw">@Microsoft</a> : <a href="https://twitter.com/hashtag/WindowsUglySweater?src=hash&amp;ref_src=twsrc%5Etfw">#WindowsUglySweater</a> <br><br>Me: I&#39;m in. <a href="https://t.co/vYQ3WXwvki">pic.twitter.com/vYQ3WXwvki</a></p>&mdash; Kyle TechSquidTV (@TechSquidTV) <a href="https://twitter.com/TechSquidTV/status/1205543016276070400?ref_src=twsrc%5Etfw">December 13, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
 ## How can you get your own?
 
-Well, Microsoft is unfortunately not selling these sweaters. It was rumored that users who shared Microsoft’s tweet may be able to obtain one but there wasn’t much proof.  Besides the tweet above I also responded to the main thread where @Windows was asking community questions:
+Well, Microsoft is unfortunately not selling these sweaters. It was rumored that users who shared Microsoft’s tweet may be able to obtain one but there wasn’t much proof. Besides the tweet above I also responded to the main thread where @Windows was asking community questions:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Step 1. Draw a yellow circle.<br>Step 2. Give it two eyes.<br>Step 3. Open Windows Media Player and play Green Day&#39;s Boulevard Of Broken Dreams<br>Step 4. Draw a mouth on your circle but move the mouse so it looks like your smiley face is singing.</p>&mdash; Kyle TechSquidTV (@TechSquidTV) <a href="https://twitter.com/TechSquidTV/status/1205543495840210946?ref_src=twsrc%5Etfw">December 13, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

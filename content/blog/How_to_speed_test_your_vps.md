@@ -1,7 +1,7 @@
 ---
 title: How To Speed Test Your VPS
 description: Is your VPS provider giving you adequate upload and download speeds? Use the speedtest-cli package to run a speed test from the terminal.
-headerImage: ./posts/img/vps-speed.png
+headerImage: /posts/img/vps-speed.png
 tags:
   - linux
 createdAt: 1533441600000

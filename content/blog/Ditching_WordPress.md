@@ -1,7 +1,7 @@
 ---
 title: Ditching WordPress for NuxtJS and Netlify
 description: Why I broke up with WordPress and my VPS hosting provider, and started using NuxtJS and Netlify entirely for free.
-headerImage: ./posts/img/NuxtJS_Blog.png
+headerImage: /posts/img/NuxtJS_Blog.png
 tags:
   - webdev
   - blog
@@ -47,6 +47,7 @@ So if WordPress has all of the bells and whistles and there are seemingly so man
 3. Maintenance
 
 ### Cost
+
 Running any dynamic website is typically going to require a web hosting provider and a database. Now, with the smaller size and traffic of blog like mine, it's possible to get away with using a $5/month VPS (Virtual Private Server) from providers such as Vultr, DigitalOcean, or Linode. This blog was originally hosted with Vultr for $5/month, but WordPress and a database demand more memory than you might think to do things like optimize images when you upload them. Soon after going live, I had to switch to a $10/month VPS amd I threw in $2/month for automatic backups.
 
 So in total, running my blog with a VPS hosting provider was $12/month, or _$144 per year_. No offense, I love you all, thank you for reading this if you are, but I can't justify spending $144 per year on a blog right now with cheaper options available, even if some sacrifices must be made.
@@ -76,9 +77,10 @@ Besides updates to WordPress itself, you'll have updates to your themes, plugins
 [Nuxt](https://nuxtjs.org/) is a [Vue.js](https://vuejs.org/) based framework for building modern web applications, and it's a great choice for a static site generator. While Nuxt can be used to build more traditional "server-side rendered" websites, it also has the ability to pre-render your pages to a static site. If you are a react fan you may know the framework Nuxt was inspired by, [Next](https://nextjs.org/).
 
 You may already be more familiar with popular static site generators such as:
-  - [Hugo](https://gohugo.io/)
-  - [Jekyll](https://jekyllrb.com/)
-  - [Gatsby](https://www.gatsbyjs.org/)
+
+- [Hugo](https://gohugo.io/)
+- [Jekyll](https://jekyllrb.com/)
+- [Gatsby](https://www.gatsbyjs.org/)
 
 So why not use any of the above? Why choose Nuxt instead? While all great choices, and possibly the best choice for your needs, there are a few reasons why I chose Nuxt.
 
