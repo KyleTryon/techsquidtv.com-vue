@@ -5,7 +5,7 @@
     <footer class="text-center mt-4">
       <follow-bar />
       <p>This website is made with <a href="https://nuxtjs.org/">NuxtJS</a> and is open-source</p>
-      <p>Find an issue or want to contribute? Jump over to GitHub</p>
+      <p>Find an issue or want to contribute? Jump over to <a href="https://github.com/KyleTryon/techsquidtv.com">GitHub</a></p>
     </footer>
   </div>
 </template>
