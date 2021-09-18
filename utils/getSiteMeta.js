@@ -3,7 +3,7 @@ const url = "https://techsquidtv.com";
 const title = "TechSquidTV - Developer Content Creator Blog";
 const description =
   "Developer Content Creator - Learn about Docker, TypeScript, Hardware and Development.";
-const mainImage = "/img/tstv-blog-background-og.png";
+const mainImage = "/img/tstv-og-image-mobile.jpg";
 const baseURL = "https://techsquidtv.netlify.app"
 function getSiteMeta(meta) {
   return [
