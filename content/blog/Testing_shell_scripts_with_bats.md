@@ -1,15 +1,20 @@
 ---
 title: Testing Shell Scripts with "BATS"
-description: Deceptively simple Bash scripts everywhere are acting as the backbone of critical systems, shouldn't they be tested like any other piece of software? BATS-Core is a simple, easy-to-use, and powerful testing framework for Bash scripts.
+description: Deceptively simple Bash scripts everywhere are acting as the backbone of critical systems. Shouldn't they be tested like any other piece of software? BATS-Core is a simple, easy-to-use, yet powerful testing framework for Bash scripts.
 headerImage: /posts/img/bats-testing.png
+created_at: 1632109788469
 tags:
   - linux
   - testing
 ---
 
-Unit-Testing Bash is something I never considered was even possible, nor did it cross my mind how critical Bash scripts often are often going un-tested. If you are in the semi-rare situation where you are publishing Bash scripts to production, you may want to pay attention.  The rest of you are reading I assume for shock value.
+Unit-Testing Bash is something I never considered was even possible, nor did it cross my mind how critical Bash scripts often are often going un-tested. If you are in the semi-rare situation where you are publishing Bash scripts to production, you may want to pay attention. The rest of you are reading, I assume for shock value.
+
+<script id="asciicast-LQbYYy7h5IYlNu0pzG11Ji2MR" src="https://asciinema.org/a/LQbYYy7h5IYlNu0pzG11Ji2MR.js" async></script>
 
 In my day job, I create CI integrations for a large CI platform, mostly in Bash. Bash is extremely portable, running on most Linux distributions and mostly compatible with MacOS. A more common scenario might be deploying shell scripts to Ansible, or distributing bash scripts directly like [CodeCov's Bash Uploader](https://docs.codecov.com/docs/about-the-codecov-bash-uploader)(_until recently_).
+
+Example Project: [https://github.com/KyleTryon/TSTV-Examples-BATS](https://github.com/KyleTryon/TSTV-Examples-BATS)
 
 ## BATS-Core Bash Automated Testing System
 
@@ -24,10 +29,10 @@ If you are already familiar with unit-testing in languages like JavaScript, you 
 If you haven't written a lot of Bash in the past, you've probably written fairly linear scripts, without functions, all in a single file. For small scripts that may be find but let's take a look at how we can write our Bash in a way that's manageable and testable.
 
 There are two main ways to approach writing testable Bash:
-1. Write small singe-purpose scripts that could be executed in sequential order.
+1. Write small single-purpose scripts that could be executed in sequential order.
 2. Create a "main" script, and define "functions" in one or more dependency scripts.
 
-In this tutorial, we are going to go with option two and define functions in a separate file.
+In this tutorial, we are going to go with option two and define functions in a separate file. Option two is a little more simple for testing, and most folks are unaware you can even write functions in Bash.
 
 Start a new directory and create two files: `main.sh` and `functions.sh`.
 
@@ -39,18 +44,17 @@ $ touch functions.sh
 
 `main.sh` will act as the "root" of our Bash "application". It will load all of the functions we write in `functions.sh`.
 
-### Writing Functions
+## Writing Functions
 
 Let's create a function that will take in two numbers and add them together, then echo the result.
 
-There are multiple syntaxes to write a function in shell but we'll stick with this.
+There are multiple syntaxes to write a function in shell, but we'll stick with this.
 
-```bash{}[functions.sh]
+```bashf[functions.sh]
 #!/bin/sh
 
 addNumbers() {
-  result=$(($1+$2))
-  echo $result
+  echo $(($1+$2))
 }
 
 addNumbers 1 2
@@ -58,16 +62,16 @@ addNumbers 1 2
 
 When we run `./functions.sh` from the shell, we'll get back `3`.
 
-```bash
-$ ./functions.sh
+```shell
+$ . ./functions.sh
 3
 ```
 
-We can't use `()` parentheses in functions in the same way we do in most programming languages, the parentheses are just decorative. We can however, pass arguments to our function the same way you can any shell executable.
+We can't use `()` parentheses in functions to pass arguments in the same way we do in most programming languages, the parentheses are just decorative. We can however, pass arguments to our function the same way you can any shell executable.
 
 The `$0` variable contains the current shell, and each numeric value above that corresponds to each argument passed in.
 
-Now, we don't actually wan't our `functions.sh` file to execute, we only want it to contain the functions we want to call in `main.sh`, and test. So, let's remove the `addNumbers 1 2`
+Now, we don't actually want our `functions.sh` file to execute, we only want it to contain the functions we want to call in `main.sh`, and test. So, let's remove the `addNumbers 1 2`
 
 ```bash{}[functions.sh]
 #!/bin/sh
@@ -84,10 +88,8 @@ Let's add one more example to our `functions.sh` file, another function that wil
 #!/bin/sh
 
 addNumbers() {
-
   result=$(($1+$2))
   echo $result
-
 }
 
 squareResult() {
@@ -100,35 +102,57 @@ We have here two functions, but we can't yet do anything with them. So let's ope
 
 ```bash[main.sh]
 #!/bin/sh
-source functions.sh
+. functions.sh
 sum=$(addNumbers 1 2)
 squareResult $sum
 ```
 
+`source` is a Bash built-in command that will load and execute a file in the current shell. It's a common way to load in function, environment variables, constants, or run other scripts.
 
-## Testing Your Bash with BATS
+`source` and `.` are equivalent.
 
-### Installing BATS
+Once the functions have been loaded, we can now call them from `main.sh`. In this example, we store the result of `addNumbers 1 2` in `sum`, and then we call `squareResult` on `$sum`.
 
-Now that you've had a mico-crash-course on writing Bash functions, lets take a look at testing our new Bash script using the [BATS-Core Bash Automation Testing System](https://github.com/bats-core/bats-core#run-test-other-commands).
+When we run `./main.sh` from the shell, we'll get back `9`.
+
+```shell
+$ source ./main.sh
+9
+```
+
+We now have a relatively simple and easy to read `main.sh` file which has had the main logic abstracted away in `functions.sh`.
+
+Now, how do we ensure the integrity of our script(s) in the future. If someone were to make a pull request that modified our BASH scripts, we'd want to ensure that the changes are tested before we commit them.
+
+## Installing BATS
+
+Now that you've had a mico-crash-course on writing Bash functions, let's take a look at testing our new Bash script using the [BATS-Core Bash Automation Testing System](https://github.com/bats-core/bats-core#run-test-other-commands).
 
 First, install BATS-Core. There are a number of different installation options, including Homebrew, NPM, or you can install from the source directly.
 
 ```shell
+# Install BATS-Core
 $ git clone https://github.com/bats-core/bats-core.git
 $ cd bats-core
 $ ./install.sh /usr/local
 ```
+or
+```shell
+# Install BATS-Core via NPM
+$ npm install -g bats
+```
 
 Run `bats -v` to verify the installation.
 
-### Write Tests
+## Write Tests
 
-First up to create our tests, create a tests directory right next to our shell script.
+First up to create our tests, create a tests directory right next to our shell scripts.
 
 ```shell
 📁 tests/
-📄 add.sh
+ |--- tests.bats
+📄 functions.sh
+📄 main.sh
 ```
 
 After we complete writing our tests, we will simply give BATS the path to this directory and each `.bats` test file will be executed, with each test case within being evaluated.
@@ -139,36 +163,107 @@ A `.bat` file is nothing more than a simple bash script with some fancy syntax s
 
 Let's write our first test case.
 
-```bash
+```bash[tests.bats]
 #!/usr/bin/env bats
 @test "addNumbers 5 + 3 | expect 8" {
   run addNumbers 5 3
+  echo "result: ${output}"
   [ "$status" -eq 0 ]
-  [ "$output" = "8" ]
-  [ "$result" = "8" ]
+  [ "$output" = 8 ]
 }
 ```
 
 Now don't go running anything yet, there is an issue we'll need to take care of but let's check out what we have.
 
-`@test` is a special syntax for BATS which is nothing more than a wrapper for a function. The first "_argument_" here is the test description/name and within this function is your test code. BATS will automatically iterate each test case and report back the results individually, we'll take a look at that soon.
+`@test` is a special syntax for BATS which is nothing more than a wrapper for a standard shell function. The first "_argument_" here is the test description/name and within this function is your test code. BATS will automatically iterate each test case and report back the results individually, we'll take a look at that soon.
 
 What runs within this test case is any valid bash code. If a _non-zero_ status code is returned during this test it will be considered a failure. So we want to execute some code within this test and ensure a non-zero exit code is raised if we see unexpected behavior. 
 
-We will be testing our "`addNumbers`" function by passing it two known values and comparing the output. If we feed in to our function the numbers '`5`' and '`3`', we expect to get back '`8`', both echoed to the standard output, and saved under the `$result` variable.
+Additionally, BATS comes with another special helper function `run` which will execute the given command and quietly store the exit status code and any output to the variables `status` and `output`. Using `run`, we can specifically test for expected exit codes in our test cases.
 
-`run` is another special function that is included with the BATS framework that is extremely helpful (though you don't have to use it). You can read about `run` and other built-in functions on the [documentation here](https://github.com/bats-core/bats-core#run-test-other-commands).
+Here, we are testing our "`addNumbers`" function by passing it two known values and comparing the output. If we feed in to our function the numbers '`5`' and '`3`', we expect to get back '`8`' echoed to standard output.
 
-What `run` does is execute some command, and save the standard output to the `$output` environment variables, and the exit status to `$status`. The `run` command itself will always return a `0` status code so we can then write our tests around the values stored in these two environment variables.
+And of course, before actually checking the output, we first check to ensure that we got a successful `0` exit code.
 
-```bash
+You can read about `run` and other built-in functions on the [documentation here](https://github.com/bats-core/bats-core#run-test-other-commands).
+
+```bash[breakdown]
 run addNumbers 5 3
   [ "$status" -eq 0 ]
-  [ "$output" = "8" ]
-  [ "$result" = "8" ]
+  [ "$output" = 8 ]
 ```
-In this test, we expect no issues so we check to ensure `$status` is equal to zero (`0`). We also know that the result was saved to `$result` and echoed to standard output, which is recorded by the run function under $output, so we will also test for those as well, which we expect to be equal to `8`.
+In this test, we expect no issues so we check to ensure `$status` is equal to zero (`0`). We also know that the result echoed to standard output, which is recorded by the run function under $output. So, we will also test for the output, which we expect to be equal to `8`.
 
-This one test now checks three conditions to be considered valid.
+This one test now checks two conditions to be considered valid.
 
-setup() import your script
+Now I mentioned a moment ago, we aren't quite done yet, we haven't actually imported our functions yet.
+
+We're going to add a `setup` function to our BATS tests, which is another special function that will run before every one of our tests. Here, we will load in our functions from `functions.sh`.
+
+```bash[tests.bats]
+#!/usr/bin/env bats
+
+setup() {
+  . ./functions.sh
+}
+
+@test "addNumbers 5 + 3 | expect 8" {
+  run addNumbers 5 3
+  echo "result: ${output}"
+  [ "$status" -eq 0 ]
+  [ "$output" = 8 ]
+}
+```
+
+We're just about done, but for the sake the example, since we have two functions, let's add a second test case to our `tests.bats` file for the squareResult function.
+
+**Final test.bats**
+
+```bash[tests.bats]
+#!/usr/bin/env bats
+
+setup() {
+  . ./functions.sh
+}
+
+@test "addNumbers 5 + 3 | expect 8" {
+  run addNumbers 5 3
+  echo "result: ${output}"
+  [ "$status" -eq 0 ]
+  [ "$output" = 8 ]
+}
+
+
+@test "squareResult 3 | expect 9" {
+  run squareResult 3
+  echo "result: ${output}"
+  [ "$status" -eq 0 ]
+  [ "$output" = 9 ]
+}
+```
+
+Run `bats <directory>` to execute the tests
+
+<script id="asciicast-LQbYYy7h5IYlNu0pzG11Ji2MR" src="https://asciinema.org/a/LQbYYy7h5IYlNu0pzG11Ji2MR.js" async></script>
+
+## Conclusion
+
+That's really all there is to it! Go forth and write clean and testable bash scripts! 
+
+Consider running your tests automatically though a CI provider, or adding a git pre-commit hook to ensure that your scripts are tested before you commit them.
+
+As a final thought, I considered "What if you want to ship a single script, rather than the two `main.sh` and `functions.sh` scripts?". Well, a quick StackOverflow search for the correct `sed` command later and we have a solution.
+
+You can create a `package.sh` file that will replace the line that sources our functions, with the contents of the `functions.sh` file instead.
+
+```bash[package.sh]
+# Inject the functions directly into the main.sh file
+# Useful for production.
+# https://unix.stackexchange.com/a/49438
+
+sed -e '/. functions.sh/ {' -e 'r functions.sh' -e 'd' -e '}' -i main.sh
+```
+
+This will produce a `main.sh` file that can be shipped as a single script.
+
+Example Source: [https://github.com/KyleTryon/TSTV-Examples-BATS](https://github.com/KyleTryon/TSTV-Examples-BATS)
