@@ -152,6 +152,19 @@ article h3 {
 article h4 {
   @apply text-xl;
 }
+
+.filename {
+  @apply absolute z-10 right-1 p-2
+}
+
+:not(pre) > code {
+  @apply bg-gray-500 text-gray-100 rounded-sm p-1;
+}
+
+.headerImage img{
+  @apply object-cover w-full h-full;
+  max-height: 400px;
+}
 </style>
 
 <script>
