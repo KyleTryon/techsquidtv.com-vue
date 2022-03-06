@@ -102,6 +102,33 @@ Installation for a host of other operating systems can be found in the [Oh My ZS
 
 <nuxt-picture src="./posts/img/oh-my-zsh-sticker.png" fit="contain" alt="ohmyzsh sticker" class="small-image"></nuxt-picture>
 
+Most of the terminal applications we mentioned above have their own independent color scheme and theming abilities, but like we also mentioned, we aren't _always_ in our terminal application, sometimes we are in VS Code for example and we will not have the same exact features. But luckily we can manage much of the same theming abilities directly in our shell, and there is an excellent ZSH config manager called _Oh My ZSH_ that will help us do it.
+
+#### Install _Oh MY ZSH_
+
+```shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+#### Theme ZSH with PowerLevel10K
+
+_Boom_ you're done. Now, you can follow the [Oh My ZSH Docs](https://github.com/ohmyzsh/ohmyzsh#using-oh-my-zsh) on how to configure and manage plugins for ZSH, but! There is a popular ZSH theme with a lot of great plugins pre-configured that's really easy to install.
+
+[PowerLevel10K](https://github.com/romkatv/powerlevel10k) will give us a quick path to a beautiful and functional terminal theme. _This_ is really the magic in creating a beautiful terminal experience. The main features we are going to get out of this is glyphs/icons, colors, and git information right in our prompt.
+
+<nuxt-picture src="./posts/img/powerlevel10k.png" fit="contain" alt="ohmyzsh powerlevel10k" class="small-image"></nuxt-picture>
+
+##### Install PowerLevel10K for ZSH:
+
+```shell
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+echo 'export ZSH_THEME="powerlevel10k/powerlevel10k"' >> ~/.zshrc
+exec zsh
+```
+
+A configuration wizard will be started automatically and you can make multiple selections to customize your experience. Everything shown in the configuration wizard is completely up to your personal preference.
+
+
 ## Install and configure beautiful CLI apps
 
 To take full advantage of our modern systems, we need modern applications. Most of the base system tools you use today are largely unchanged since they were originally released in the early 80's. They work, they get updated so they keep working, but we can do so much better.
