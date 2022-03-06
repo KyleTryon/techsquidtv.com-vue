@@ -59,7 +59,7 @@
             </div>
           </div>
         </header>
-        <div>
+        <div class="articleContent">
           <nuxt-content :document="article" />
         </div>
       </div>
@@ -137,8 +137,8 @@ iframe {
   min-height: 0;
 }
 
-article ol {
-  @apply list-decimal ml-8;
+.articleContent  ul {
+  @apply list-disc ml-8;
 }
 
 article h2 {
