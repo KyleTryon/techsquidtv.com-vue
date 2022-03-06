@@ -22,7 +22,7 @@
     "nuxt-content-git": "^2.0.13",
     "prism-themes": "^1.8.0",
     "reading-time": "^1.4.0",
-    "vue-composable": "^1.0.0-beta.23"
+    "vue-composable": "^1.0.0-beta.24"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
