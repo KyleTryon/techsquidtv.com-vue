@@ -79,3 +79,8 @@ main {
 pre[class*='language-'] {
   @apply rounded-sm;
 }
+
+
+.small-image > img {
+  @apply w-1/2 m-auto
+}
